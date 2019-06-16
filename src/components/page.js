@@ -10,6 +10,11 @@ export default class Page extends React.Component {
     return (
       <div>
         <HeaderComponent />
+        <p style={{padding: '1rem'}}>
+          I learned ES6 by writing it and failing. Out of this the es6katas evolved. And since, this allowed me to always again go back and (re-)learn ES6 I wrote katas for ES8, later ES1 (I always got the <code>sort()</code> function wrong). At some point I started to learn a very expressive assertion library <a href="https://github.com/rluba/hamjest">hamjest</a> by writing katas for it, and so this page came about.<br />
+          Enjoy and I hope you have fun learning with it.<br/>
+          Wolfram Kriesing
+        </p>
         {kataBundles.map(kataGroups => <KataGroups name={''} groups={kataGroups}/>)}
         <FooterComponent katasCount={100} />
       </div>
@@ -47,7 +52,7 @@ class KataGroup extends React.Component {
     const {isNewestKataCheck} = this.props;
     return (
       <div className="group">
-        <h2>{group.name}</h2>
+        <h3>{group.name}</h3>
         {group.katas.map((kata) => <Kata kata={kata} isNewest={isNewestKataCheck(kata)} key={kata.id}/>)}
       </div>
     );
