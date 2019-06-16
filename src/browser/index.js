@@ -10,17 +10,17 @@ function _renderInBrowser(err, metadataJsons) {
     console.log(err);
   } else {
     const targetNode = document.getElementById('app');
-    const allKataGroups = metadataJsons.map(json => RawMetadata.toKataGroups(json));
-    React.render(<Page kataBundles={allKataGroups}/>, targetNode);
+    const kataBundles = metadataJsons.map(({data, name}) => ({name, kataGroups: RawMetadata.toKataGroups(data)}));
+    React.render(<Page kataBundles={kataBundles}/>, targetNode);
   }
 }
 
 const loadAllKatas = async () => {
   const metadataJsons = [];
-  metadataJsons.push(await loadViaAjax(metadataUrls.es1));
-  metadataJsons.push(await loadViaAjax(metadataUrls.es6));
-  metadataJsons.push(await loadViaAjax(metadataUrls.es8));
-  metadataJsons.push(await loadViaAjax(metadataUrls.hamjest));
+  metadataJsons.push({name: 'ECMAScript 1', data: await loadViaAjax(metadataUrls.es1)});
+  metadataJsons.push({name: 'ECMAScript 6', data: await loadViaAjax(metadataUrls.es6)});
+  metadataJsons.push({name: 'ECMAScript 8', data: await loadViaAjax(metadataUrls.es8)});
+  metadataJsons.push({name: 'Assertion Library Hamjest', data: await loadViaAjax(metadataUrls.hamjest)});
 
   _renderInBrowser(null, metadataJsons);
 };

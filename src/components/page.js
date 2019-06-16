@@ -15,7 +15,7 @@ export default class Page extends React.Component {
           Enjoy and I hope you have fun learning with it.<br/>
           Wolfram Kriesing
         </p>
-        {kataBundles.map(kataGroups => <KataGroups name={''} groups={kataGroups}/>)}
+        {kataBundles.map(({kataGroups, name}) => <KataGroups name={name} groups={kataGroups}/>)}
         <FooterComponent katasCount={100} />
       </div>
     );
@@ -24,10 +24,10 @@ export default class Page extends React.Component {
 
 class KataGroups extends React.Component {
   render() {
-    const {groups:kataGroups} = this.props;
+    const {groups:kataGroups, name} = this.props;
     return (
       <div>
-        <h2>A Name</h2>
+        <h2>{name}</h2>
         {kataGroups.all().map(group => <KataGroup group={group} isNewestKataCheck={kataGroups.isNewestKata.bind(kataGroups)}
                                           key={group.name}/>)}
       </div>
