@@ -28,7 +28,7 @@ export default class FooterComponent extends React.Component {
         
         <ul>
           <li>
-            <a href="http://github.com/tddbin/es6katas.org">
+            <a href="http://github.com/wolframkriesing/jskatas.org">
               <i className="fa fa-github"></i>source of this site
             </a>
           </li>
@@ -38,7 +38,7 @@ export default class FooterComponent extends React.Component {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/es6katas">
+            <a href="https://twitter.com/jskatas">
               <i className="fa fa-twitter"></i>ES6 Katas
             </a>
           </li>

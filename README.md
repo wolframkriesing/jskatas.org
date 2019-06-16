@@ -1,4 +1,8 @@
-# es6katas.org
+# jskatas.org
+
+Has evolved out of es6katas.org.
+
+## The ES6Katas.org story
 
 [ES6Katas.org] is a simple website that lists various katas (small tasks) for learning ECMAScript 6 by doing it.
 Each kata links to [tddbin] and loads the according source code in there. All you have to do is fix

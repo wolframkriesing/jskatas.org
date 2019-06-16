@@ -1,7 +1,7 @@
 {
-  "name": "es6katas.org",
+  "name": "jskatas.org",
   "version": "0.0.1",
-  "description": "es6katas.org site",
+  "description": "jskatas.org site",
   "main": "index.js",
   "browser": {
     "react": "./src/shim/react.js"
