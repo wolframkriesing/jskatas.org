@@ -11,13 +11,16 @@ function _renderInBrowser(err, metadataJsons) {
   } else {
     const targetNode = document.getElementById('app');
     const allKataGroups = metadataJsons.map(json => RawMetadata.toKataGroups(json));
-    React.render(<Page kataGroups={allKataGroups[0]}/>, targetNode);
+    React.render(<Page kataBundles={allKataGroups}/>, targetNode);
   }
 }
 
 const loadAllKatas = async () => {
   const metadataJsons = [];
+  metadataJsons.push(await loadViaAjax(metadataUrls.es1));
   metadataJsons.push(await loadViaAjax(metadataUrls.es6));
+  metadataJsons.push(await loadViaAjax(metadataUrls.es8));
+  metadataJsons.push(await loadViaAjax(metadataUrls.hamjest));
 
   _renderInBrowser(null, metadataJsons);
 };

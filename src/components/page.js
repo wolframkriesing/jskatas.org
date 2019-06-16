@@ -6,13 +6,23 @@ import FooterComponent from './footer';
 export default class Page extends React.Component {
 
   render() {
-    let {kataGroups} = this.props;
-    const katasCount = kataGroups.all().reduce((old, {katas: {length}}) => old + length, 0);
+    let {kataBundles} = this.props;
     return (
       <div>
         <HeaderComponent />
-        <KataGroups groups={kataGroups}/>
-        <FooterComponent katasCount={katasCount} />
+        {kataBundles.map(kataGroups => <KataGroups name={''} groups={kataGroups}/>)}
+        <FooterComponent katasCount={100} />
+      </div>
+    );
+  }
+};
+
+class KataBundle extends React.Component {
+  render() {
+    const {kataGroups} = this.props;
+    return (
+      <div>
+
       </div>
     );
   }
@@ -23,6 +33,7 @@ class KataGroups extends React.Component {
     const {groups:kataGroups} = this.props;
     return (
       <div>
+        <h2>A Name</h2>
         {kataGroups.all().map(group => <KataGroup group={group} isNewestKataCheck={kataGroups.isNewestKata.bind(kataGroups)}
                                           key={group.name}/>)}
       </div>
