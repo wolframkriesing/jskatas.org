@@ -22,17 +22,6 @@ export default class Page extends React.Component {
   }
 };
 
-class KataBundle extends React.Component {
-  render() {
-    const {kataGroups} = this.props;
-    return (
-      <div>
-
-      </div>
-    );
-  }
-}
-
 class KataGroups extends React.Component {
   render() {
     const {groups:kataGroups} = this.props;
@@ -98,7 +87,7 @@ class KataDetails extends React.Component {
     const {kata} = this.props;
     return (
       <span className="details">
-        <h2>{kata.name} (#{kata.id})</h2>
+        <h3>{kata.name} (#{kata.id})</h3>
         <p>{kata.description}</p>
         Difficulty: {kata.level.toLowerCase()}<br/>
         <KataLinks links={kata.links} />
