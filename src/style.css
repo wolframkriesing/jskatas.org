@@ -18,6 +18,11 @@ a .code {
 .group a {
   display: block;
 }
+h2 {
+  color: white;
+  background: #363738;
+  padding: 0.5rem;
+}
 
 .group {
   display: inline-block;
@@ -26,7 +31,7 @@ a .code {
   border: 1px solid grey;
   padding: 0 1em 1em 1em;
 }
-  .group h2 {
+  .group h3 {
     margin: 0.2em 0;
     font-size: 1.1em;
   }
