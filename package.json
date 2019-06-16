@@ -6,9 +6,11 @@
   "browser": {
     "react": "./src/shim/react.js"
   },
+  "browserslist": ["last 2 Chrome versions"],
+  "engines": { "node" : ">= 11" },
   "scripts": {
     "test": "kavun `bash -c 'ls src/**/*spec.js'` --reporter=minimal",
-    "dev-build-app": "browserify src/browser/index.js --outfile=dist/index.min.js --transform=babelify",
+    "dev-build-app": "parcel build src/browser/index.js --out-file dist/index.min.js --no-cache --no-source-maps --no-minify",
     "build": "./scripts/build/build.sh",
     "build:app": "browserify src/browser/index.js --outfile=dist/index.js --transform=babelify",
     "build:rss": "mkdir -p dist/rss && babel-node src/rss-feed.js > dist/rss/MostRecent.xml",
@@ -35,13 +37,17 @@
   },
   "homepage": "https://github.com/tddbin/es6katas.org",
   "devDependencies": {
-    "babel": "^5.8.9",
-    "babelify": "^5.0.4",
-    "browserify": "^9.0.3",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
     "concurrently": "^4.1.0",
     "disc": "^1.3.2",
     "kavun": "^3.0.0",
     "local-web-server": "^3.0.1",
+    "parcel-bundler": "^1.12.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "to-do-list-checker": "^4.0.0",

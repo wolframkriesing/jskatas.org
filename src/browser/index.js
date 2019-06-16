@@ -1,18 +1,24 @@
-import 'babel/polyfill';
+// import '@babel/polyfill';
 import React from 'react';
 import {loadViaAjax} from './ajax.js';
 import Page from '../components/page.js';
 import RawMetadata from '../rawmetadata.js';
-import {GROUPED_METADATA_URL} from '../config.js';
+import {metadataUrls} from '../config.js';
 
-function _renderInBrowser(err, metadataJson) {
+function _renderInBrowser(err, metadataJsons) {
   if (err) {
     console.log(err);
   } else {
     const targetNode = document.getElementById('app');
-    const allKataGroups = RawMetadata.toKataGroups(metadataJson);
-    React.render(<Page kataGroups={allKataGroups}/>, targetNode);
+    const allKataGroups = metadataJsons.map(json => RawMetadata.toKataGroups(json));
+    React.render(<Page kataGroups={allKataGroups[0]}/>, targetNode);
   }
 }
 
-loadViaAjax(GROUPED_METADATA_URL, _renderInBrowser);
+const loadAllKatas = async () => {
+  const metadataJsons = [];
+  metadataJsons.push(await loadViaAjax(metadataUrls.es6));
+
+  _renderInBrowser(null, metadataJsons);
+};
+loadAllKatas();

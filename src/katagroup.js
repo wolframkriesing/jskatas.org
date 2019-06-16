@@ -3,7 +3,7 @@ import Kata from './kata.js';
 export default class KataGroup {
  
   static withKatas(groupName, rawKataItems) {
-    var group = new KataGroup();
+    const group = new KataGroup();
     group.name = groupName;
     group.createKatas(rawKataItems);
     group.sortByName();

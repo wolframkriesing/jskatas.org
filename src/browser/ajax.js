@@ -1,6 +1,5 @@
-export const loadViaAjax = (url, onLoaded) => {
-  window.fetch(url)
+export const loadViaAjax = (url) => {
+  return window.fetch(url)
     .then(response => response.json())
-    .then(data => onLoaded(null, data))
     .catch(e => onLoaded(e));
 };
