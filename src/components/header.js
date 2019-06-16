@@ -4,8 +4,8 @@ export default class HeaderComponent extends React.Component {
   render() {
     return (
       <header>
-        <h1>ES6 Katas</h1>
-        <p>Learn ES6 by doing it. Fix failing tests. Keep all learnings.</p>
+        <h1>JavaScript Katas</h1>
+        <p>Learn JavaScript (the language and more) by doing it. Fix failing tests. Keep all learnings.</p>
       </header>
     );
   }
