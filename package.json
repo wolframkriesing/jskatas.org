@@ -24,7 +24,8 @@
     "watch:app": "watch 'npm run dev-build-app' src --wait=1",
     "watch:media": "watch 'npm run build:media' src --wait=1",
     "prerelease": "to-do-list-checker && npm test",
-    "release": "to-do-list-checker && npm version major"
+    "release": "to-do-list-checker && npm version major",
+    "format-code": "prettier . --write \"{src,scripts}/**/*.js\""
   },
   "repository": {
     "type": "git",
