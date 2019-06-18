@@ -12,8 +12,8 @@
 - [x] move to kavun as test runner, faster, simpler, smaller
 - [x] remove workshop banner
 - [x] classnames seems to be used rarely
-- [ ] update react, maybe preact works fine?
-- [ ] make it run on https
+- [x] update react, maybe preact works fine?
+- [x] make it run on https
 - [x] simplify the deploy, travis has push to gh-pages built in
 - [x] move to https://plausible.io/ instead of GA
-- [ ] show all ESX katas on the page
+- [x] show all ESX katas on the page
