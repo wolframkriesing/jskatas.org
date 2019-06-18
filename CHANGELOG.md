@@ -6,8 +6,7 @@
 - add analytics to the page
 - open tddbin in a new tab
 
-# Version 1
-
+# version 1
 - [x] use fetch instead of atomic
 - [x] move to kavun as test runner, faster, simpler, smaller
 - [x] remove workshop banner

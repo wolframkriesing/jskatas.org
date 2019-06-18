@@ -22,7 +22,9 @@
     "start": "concurrently 'npm run watch:app' 'npm run watch:media' 'ws --cors.origin=* --port 9779 --directory dist'",
     "render-on-server": "./scripts/render-html.sh",
     "watch:app": "watch 'npm run dev-build-app' src --wait=1",
-    "watch:media": "watch 'npm run build:media' src --wait=1"
+    "watch:media": "watch 'npm run build:media' src --wait=1",
+    "prerelease": "to-do-list-checker && npm test",
+    "release": "to-do-list-checker && npm version major"
   },
   "repository": {
     "type": "git",
