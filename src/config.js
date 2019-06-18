@@ -5,5 +5,4 @@ export const metadataUrls = {
   es8: `${DOMAIN}/katas/es8/language/__grouped__.json`,
   hamjest: `${DOMAIN}/katas/libraries/hamjest/__grouped__.json`,
 };
-export const GROUPED_METADATA_URL = `${DOMAIN}/katas/es6/language/__grouped__.json`;
 export const FLAT_METADATA_URL = `${DOMAIN}/katas/es6/language/__all__.json`;
