@@ -1,6 +1,6 @@
-import React from 'react';
+import {h, Component} from 'preact';
 
-export default class FooterComponent extends React.Component {
+export default class FooterComponent extends Component {
   render() {
     const {katasCount} = this.props;
     return (

@@ -1,9 +1,9 @@
-import React from 'react';
+import {h, Component} from 'preact';
 
 import HeaderComponent from './header';
 import FooterComponent from './footer';
 
-export default class Page extends React.Component {
+export default class Page extends Component {
 
   render() {
     let {kataBundles} = this.props;
@@ -22,7 +22,7 @@ export default class Page extends React.Component {
   }
 };
 
-class KataGroups extends React.Component {
+class KataGroups extends Component {
   render() {
     const {groups:kataGroups, name} = this.props;
     return (
@@ -35,7 +35,7 @@ class KataGroups extends React.Component {
   }
 }
 
-class KataGroup extends React.Component {
+class KataGroup extends Component {
   render() {
     const group = this.props.group;
     const {isNewestKataCheck} = this.props;
@@ -48,7 +48,7 @@ class KataGroup extends React.Component {
   }
 }
 
-class Kata extends React.Component {
+class Kata extends Component {
   render() {
     const {kata, isNewest} = this.props;
     const {url, name, level} = kata;
@@ -62,7 +62,7 @@ class Kata extends React.Component {
   }
 }
 
-class KataName extends React.Component {
+class KataName extends Component {
   render() {
     const classNames = [];
     
@@ -82,7 +82,7 @@ class KataName extends React.Component {
   }
 }
 
-class KataDetails extends React.Component {
+class KataDetails extends Component {
   render() {
     const {kata} = this.props;
     return (
@@ -96,7 +96,7 @@ class KataDetails extends React.Component {
   }
 }
 
-class KataLinks extends React.Component {
+class KataLinks extends Component {
   render() {
     const {links=[]} = this.props;
     if (links.length === 0) {

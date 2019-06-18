@@ -1,5 +1,4 @@
-// import '@babel/polyfill';
-import React from 'react';
+import {render, h} from 'preact';
 import {loadViaAjax} from './ajax.js';
 import Page from '../components/page.js';
 import RawMetadata from '../rawmetadata.js';
@@ -11,7 +10,7 @@ function _renderInBrowser(err, metadataJsons) {
   } else {
     const targetNode = document.getElementById('app');
     const kataBundles = metadataJsons.map(({data, name}) => ({name, kataGroups: RawMetadata.toKataGroups(data)}));
-    React.render(<Page kataBundles={kataBundles}/>, targetNode);
+    render(<Page kataBundles={kataBundles}/>, targetNode);
   }
 }
 
