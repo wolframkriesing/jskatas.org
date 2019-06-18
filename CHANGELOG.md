@@ -1,10 +1,11 @@
-# ???  2015-??-??
+# Ideas
 
-- pre-render the index.html page at deploy time, so the rendering will be flying fast, only updates 
-  will be applied to the DOM once the page was rendered on the client
-- separate server- and client-side rendering better, improve code
-- add analytics to the page
-- open tddbin in a new tab
+- [ ] separate server- and client-side rendering better, improve code
+
+# verison 2
+- [ ] show plausible stats
+- [ ] show changelog
+- [ ] redirect to es6katas to jskatas.org/bundles/es6
 
 # version 1
 - [x] use fetch instead of atomic
@@ -16,3 +17,10 @@
 - [x] simplify the deploy, travis has push to gh-pages built in
 - [x] move to https://plausible.io/ instead of GA
 - [x] show all ESX katas on the page
+
+# version 0 
+- [x] pre-render the index.html page at deploy time, so the rendering will be flying fast, only updates 
+      will be applied to the DOM once the page was rendered on the client
+- [x] separate server- and client-side rendering better, improve code
+- [x] add analytics to the page - plausible was added
+- [x] open tddbin in a new tab
