@@ -21,19 +21,19 @@ export default class FooterComponent extends Component {
         
         <ul>
           <li>
-            <a href="http://tddbin.com">uses TDDbin</a>
+            <a href={process.env.TDDBIN_URL}>uses TDDbin</a>
           </li>
           <li>{katasCount} katas</li>
         </ul>
         
         <ul>
           <li>
-            <a href="http://github.com/wolframkriesing/jskatas.org">
+            <a href={process.env.REPO_URL}>
               <i className="fa fa-github"></i>source of this site
             </a>
           </li>
           <li>
-            <a href="http://github.com/tddbin/katas">
+            <a href="https://github.com/tddbin/katas">
               <i className="fa fa-github"></i>all katas
             </a>
           </li>
