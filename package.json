@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "kavun `bash -c 'ls src/**/*spec.js'` --reporter=minimal",
-    "dev-build-app": "parcel build src/browser/index.js --out-file dist/index.min.js --no-cache --no-source-maps --no-minify",
+    "dev-build-app": "mkdir -p dist; parcel build src/browser/index.js --out-file dist/index.min.js --no-cache --no-source-maps --no-minify",
     "build": "./scripts/build/build.sh",
     "build:app": "parcel build src/browser/index.js --out-file dist/index.min.js --no-cache --no-source-maps",
     "build:rss": "mkdir -p dist/rss && babel-node src/rss-feed.js > dist/rss/MostRecent.xml",
