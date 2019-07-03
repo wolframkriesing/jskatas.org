@@ -5,7 +5,8 @@
 # verison 2
 - [ ] show plausible stats
 - [ ] show changelog
-- [ ] redirect to es6katas to jskatas.org/bundles/es6
+- [ ] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas
+- [ ] render proper links for all katas (esp. non-es6katas)
 
 # version 1
 - [x] use fetch instead of atomic
