@@ -36,14 +36,14 @@ export default class KataGroups {
   }
   
   sortByNumberOfLinks() {
-    function sortFunction(group, anotherGroup) {
+    const sortFunction = (group, anotherGroup) => {
       const katasCount = group.katas.length;
       const anotherKatasCount = anotherGroup.katas.length;
       if (katasCount === anotherKatasCount) {
         return anotherGroup.name < group.name ? 1 : -1;
       }
       return anotherKatasCount - katasCount;
-    }
+    };
     this.groups.sort(sortFunction);
   }
   
