@@ -4,10 +4,10 @@ import {loadViaNode} from './http-get.js';
 import Page from '../components/page.js';
 import {loadKataBundles} from '../pagedata.js';
 
-const _renderOnServer = (kataBundles) => 
+const renderOnServer = (kataBundles) => 
   preactRender(<Page kataBundles={kataBundles}/>);
 
 export const render = async () => {
   const kataBundles = await loadKataBundles({fetch: loadViaNode});
-  return _renderOnServer(kataBundles);
+  return renderOnServer(kataBundles);
 };
