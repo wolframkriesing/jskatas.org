@@ -2,21 +2,21 @@ import {describe, it} from 'kavun';
 import assert from 'assert';
 import Kata from '../kata.js';
 
-describe('kata', function() {
-  describe('provides all values passed to it as properties', function() {
+describe('kata', () => {
+  describe('provides all values passed to it as properties', () => {
     
-    let name = 'moi';
-    let desc = 'description';
-    let id = '123';
+    const name = 'moi';
+    const desc = 'description';
+    const id = '123';
     const kata = () => Kata.fromRawItem({name, desc, id});
-    it('property `name`', () => assert.equal(kata().name, name));
-    it('property `desc`', () => assert.equal(kata().desc, desc));
-    it('ensures the `id` is an int', () => assert.strictEqual(kata().id, +id));
+    it('property `name`', () => assert.strictEqual(kata().name, name));
+    it('property `desc`', () => assert.strictEqual(kata().desc, desc));
+    it('ensures the `id` is an int', () => assert.strictEqual(kata().id, Number(id)));
   });
 
-  it('generate the kata link from a path', function() {
+  it('generate the kata link from a path', () => {
     const path = 'template-strings/multiline';
-    let kata = Kata.fromRawItem({path});
+    const kata = Kata.fromRawItem({path});
 
     const expectedUrl = 'http://tddbin.com/#?kata=es6/language/template-strings/multiline';
     
