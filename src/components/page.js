@@ -15,20 +15,20 @@ export default class Page extends Component {
           Enjoy and I hope you have fun learning with it.<br/>
           Wolfram Kriesing
         </p>
-        {kataBundles.map(({kataGroups, name}) => <KataGroups name={name} groups={kataGroups}/>)}
+        {kataBundles.map(({kataBundle, name}) => <KataBundle name={name} bundle={kataBundle}/>)}
         <FooterComponent katasCount={100} />
       </div>
     );
   }
 };
 
-class KataGroups extends Component {
+class KataBundle extends Component {
   render() {
-    const {groups:kataGroups, name} = this.props;
+    const {bundle, name} = this.props;
     return (
       <div>
         <h2>{name}</h2>
-        {kataGroups.all().map(group => <KataGroup group={group} isNewestKataCheck={kataGroups.isNewestKata.bind(kataGroups)}
+        {bundle.all().map(group => <KataGroup group={group} isNewestKataCheck={bundle.isNewestKata.bind(bundle)}
                                           key={group.name}/>)}
       </div>
     );
