@@ -1,4 +1,4 @@
-const DOMAIN = 'http://katas.tddbin.com';
+const DOMAIN = process.env['KATAS_URL'] || 'https://katas.tddbin.com';
 export const metadataUrls = {
   es1: `${DOMAIN}/katas/es1/language/__grouped__.json`,
   es6: `${DOMAIN}/katas/es6/language/__grouped__.json`,
