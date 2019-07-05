@@ -6,7 +6,7 @@ const fromMetadataJsonToKataBundle = groupedMetadataJson => {
   const groupNames = Object.keys(groups);
   return groupNames.map((groupName) => {
     const rawKataItems = groups[groupName].items;
-    return KataGroup.withKatas(groupName, rawKataItems);
+    return KataGroup.withRawKataItems(groupName, rawKataItems);
   });
 };
 
