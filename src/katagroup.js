@@ -2,7 +2,7 @@ import Kata from './kata.js';
 
 export default class KataGroup {
  
-  static withRawKataItems(groupName, rawKataItems) {
+  static fromRawKataItems(groupName, rawKataItems) {
     const group = new KataGroup();
     group.name = groupName;
     group.createKatas(rawKataItems);
