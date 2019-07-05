@@ -5,12 +5,12 @@ export default class KataBundle {
     this.groups = [];
   }
 
-  all() {
+  allGroups() {
     return this.groups;
   }
   
   get length() {
-    return this.all().length;
+    return this.allGroups().length;
   }
   
   static withGroups(name, obj) {

@@ -15,7 +15,7 @@ export default class Page extends Component {
           Enjoy and I hope you have fun learning with it.<br/>
           Wolfram Kriesing
         </p>
-        {kataBundles.map(({kataBundle, name}) => <KataBundle name={name} bundle={kataBundle}/>)}
+        {kataBundles.map(kataBundle => <KataBundle bundle={kataBundle}/>)}
         <FooterComponent katasCount={100} />
       </div>
     );
@@ -24,12 +24,12 @@ export default class Page extends Component {
 
 class KataBundle extends Component {
   render() {
-    const {bundle, name} = this.props;
+    const {bundle} = this.props;
     return (
       <div>
-        <h2>{name}</h2>
-        {bundle.all().map(group => <KataGroup group={group} isNewestKataCheck={bundle.isNewestKata.bind(bundle)}
-                                          key={group.name}/>)}
+        <h2>{bundle.name}</h2>
+        {bundle.allGroups().map(group => <KataGroup group={group} isNewestKataCheck={bundle.isNewestKata.bind(bundle)}
+                                                    key={group.name}/>)}
       </div>
     );
   }

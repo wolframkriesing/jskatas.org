@@ -22,7 +22,7 @@ describe('sort kata groups', () => {
   kataGroups.addGroup(KataGroup.withRawKataItems('group with newest kata', [Kata.withId('111')]));
   kataGroups.sortByNumberOfLinks();
   kataGroups.moveGroupWithNewestKataToBeginning();
-  const allKataGroups = () => kataGroups.all();
+  const allKataGroups = () => kataGroups.allGroups();
   it('first is the one with the newest kata inside', () => {
     assert.equal(allKataGroups()[0].name, 'group with newest kata');
   });
@@ -40,7 +40,7 @@ describe('sort kata groups', () => {
     kataGroups.sortByNumberOfLinks();
     kataGroups.moveGroupWithNewestKataToBeginning();
   
-    assert.equal(kataGroups.all()[0].name, 'group a');
+    assert.equal(kataGroups.allGroups()[0].name, 'group a');
   });
 });
 
