@@ -5,11 +5,10 @@ import Page from '../components/page.js';
 import RawMetadata from '../rawmetadata.js';
 import {metadataUrls} from '../config.js';
 
-const _renderOnServer = (err, metadataJsons) => {
+const _renderOnServer = (err, kataBundles) => {
   if (err) {
     throw new Error(err);
   } else {
-    const kataBundles = metadataJsons.map(({data, name}) => ({name, kataBundle: RawMetadata.toKataBundle(data)}));
     return preactRender(<Page kataBundles={kataBundles}/>);
   }
 };
@@ -22,11 +21,11 @@ export const render = async () => {
     loadViaNode(metadataUrls.hamjest),
   ]);
   
-  const kataBundlesConfig = [];
-  kataBundlesConfig.push({name: 'ECMAScript 1', data: bundlesMetadata[0]});
-  kataBundlesConfig.push({name: 'ECMAScript 6', data: bundlesMetadata[1]});
-  kataBundlesConfig.push({name: 'ECMAScript 8', data: bundlesMetadata[2]});
-  kataBundlesConfig.push({name: 'Assertion Library Hamjest', data: bundlesMetadata[3]});
+  const kataBundles = [];
+  kataBundles.push({name: 'ECMAScript 1', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[0])});
+  kataBundles.push({name: 'ECMAScript 6', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[1])});
+  kataBundles.push({name: 'ECMAScript 8', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[2])});
+  kataBundles.push({name: 'Assertion Library Hamjest', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[3])});
 
-  return _renderOnServer(null, kataBundlesConfig);
+  return _renderOnServer(null, kataBundles);
 };

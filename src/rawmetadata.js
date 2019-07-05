@@ -11,7 +11,6 @@ const fromMetadataJsonToKataBundle = groupedMetadataJson => {
 };
 
 export default class RawMetadata {
-  
   static toKataBundle(groupedMetadataJson) {
     return Katabundle.fromObject(fromMetadataJsonToKataBundle(groupedMetadataJson));
   }
