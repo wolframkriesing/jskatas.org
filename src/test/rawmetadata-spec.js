@@ -12,21 +12,21 @@ class Kata {
   }
 }
 
-describe('create KataGroups from the raw metadata', function() {
+describe('create KataGroups from the raw metadata', () => {
 
   const group = {items: [Kata.withId(1)]};
   const anotherGroup = {items: [Kata.withId(2)]};
   
-  it('for one group only one KataGroup is created', function() {
+  it('for one group only one KataGroup is created', () => {
     const groupedMetadataJson = {
       groups: {'group name': group}
     };
-    
-    var kataGroups = rawMetadataToKataGroups(groupedMetadataJson);
+
+    const kataGroups = rawMetadataToKataGroups(groupedMetadataJson);
     assert.equal(kataGroups.length, 1);
   });
   
-  it('two groups two KataGroups are created', function() {
+  it('two groups two KataGroups are created', () => {
     const groupedMetadataJson = {
       groups: {
         'group name': group,
@@ -34,7 +34,7 @@ describe('create KataGroups from the raw metadata', function() {
       }
     };
 
-    var kataGroups = rawMetadataToKataGroups(groupedMetadataJson);
+    const kataGroups = rawMetadataToKataGroups(groupedMetadataJson);
     assert.equal(kataGroups.length, 2);
   });
 });
