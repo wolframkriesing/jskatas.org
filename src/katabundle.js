@@ -1,6 +1,7 @@
 export default class KataBundle {
   
   constructor() {
+    this.name = '';
     this.groups = [];
   }
 
@@ -12,12 +13,13 @@ export default class KataBundle {
     return this.all().length;
   }
   
-  static fromObject(obj) {
-    const groups = new KataBundle();
-    groups.initializePropertiesFromRawObject(obj);
-    groups.sortByNumberOfLinks();
-    groups.moveGroupWithNewestKataToBeginning();
-    return groups;
+  static withGroups(name, obj) {
+    const bundle = new KataBundle();
+    bundle.name = name;
+    bundle.initializePropertiesFromRawObject(obj);
+    bundle.sortByNumberOfLinks();
+    bundle.moveGroupWithNewestKataToBeginning();
+    return bundle;
   }
   
   isNewestKata(kata) {

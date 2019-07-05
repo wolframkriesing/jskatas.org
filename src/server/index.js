@@ -22,10 +22,10 @@ export const render = async () => {
   ]);
   
   const kataBundles = [];
-  kataBundles.push({name: 'ECMAScript 1', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[0])});
-  kataBundles.push({name: 'ECMAScript 6', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[1])});
-  kataBundles.push({name: 'ECMAScript 8', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[2])});
-  kataBundles.push({name: 'Assertion Library Hamjest', kataBundle: RawMetadata.toKataBundle(bundlesMetadata[3])});
+  kataBundles.push(RawMetadata.toKataBundle('ECMAScript 1', bundlesMetadata[0]));
+  kataBundles.push(RawMetadata.toKataBundle('ECMAScript 6', bundlesMetadata[1]));
+  kataBundles.push(RawMetadata.toKataBundle('ECMAScript 8', bundlesMetadata[2]));
+  kataBundles.push(RawMetadata.toKataBundle('Assertion Library Hamjest', bundlesMetadata[3]));
 
   return _renderOnServer(null, kataBundles);
 };

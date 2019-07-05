@@ -1,6 +1,6 @@
 import {describe, it} from 'kavun';
 import assert from 'assert';
-import Katabundle from '../katabundle.js';
+import KataBundle from '../katabundle.js';
 import KataGroup from '../katagroup';
 
 class Kata {
@@ -10,12 +10,13 @@ class Kata {
 }
 
 describe('KataBundle', () => {
-  it('', () => {
-    
+  it('must provide the `name` as property', () => {
+    const bundle = KataBundle.withGroups('ES11', {});
+    assert.strictEqual(bundle.name, 'ES11')
   });
 });
 describe('sort kata groups', () => {
-  const kataGroups = new Katabundle();
+  const kataGroups = new KataBundle();
   kataGroups.addGroup(KataGroup.withRawKataItems('group with 1 kata', [Kata.withId(0)]));
   kataGroups.addGroup(KataGroup.withRawKataItems('group with 2 katas', [Kata.withId(1), Kata.withId('21')]));
   kataGroups.addGroup(KataGroup.withRawKataItems('group with newest kata', [Kata.withId('111')]));
@@ -33,7 +34,7 @@ describe('sort kata groups', () => {
   });
 
   it('by name when number of files is the same', () => {
-    const kataGroups = new Katabundle();
+    const kataGroups = new KataBundle();
     kataGroups.addGroup(KataGroup.withRawKataItems('group b', [Kata.withId(0)]));
     kataGroups.addGroup(KataGroup.withRawKataItems('group a', [Kata.withId(1)]));
     kataGroups.sortByNumberOfLinks();
@@ -46,7 +47,7 @@ describe('sort kata groups', () => {
 describe('find newest kata', () => {
 
   it('the newest kata is the one with the highest ID', () => {
-    const kataGroups = new Katabundle();
+    const kataGroups = new KataBundle();
     kataGroups.addGroup(KataGroup.withRawKataItems('group with 1 kata', [Kata.withId(2)]));
     kataGroups.addGroup(KataGroup.withRawKataItems('group with 2 katas', [Kata.withId(4), Kata.withId(13)]));
     assert.equal(kataGroups.isNewestKata(Kata.withId(13)), true);

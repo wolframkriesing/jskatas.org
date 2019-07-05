@@ -2,8 +2,8 @@ import {describe, it} from 'kavun';
 import assert from 'assert';
 import RawMetadata from '../rawmetadata.js';
 
-const rawMetadataToKataBundle = (metadataJson) => {
-  return RawMetadata.toKataBundle(metadataJson);
+const toKataBundle = (name, metadataJson) => {
+  return RawMetadata.toKataBundle(name, metadataJson);
 };
 
 class Kata {
@@ -12,7 +12,7 @@ class Kata {
   }
 }
 
-describe('create KataBundle from the raw metadata', () => {
+describe('Create KataBundle', () => {
 
   const group = {items: [Kata.withId(1)]};
   const anotherGroup = {items: [Kata.withId(2)]};
@@ -22,8 +22,9 @@ describe('create KataBundle from the raw metadata', () => {
       groups: {'group name': group}
     };
 
-    const kataGroups = rawMetadataToKataBundle(groupedMetadataJson);
-    assert.equal(kataGroups.length, 1);
+    const bundle = toKataBundle('ES6', groupedMetadataJson);
+    assert.strictEqual(bundle.name, 'ES6');
+    assert.strictEqual(bundle.length, 1);
   });
   
   it('two groups two KataGroups are created', () => {
@@ -34,7 +35,7 @@ describe('create KataBundle from the raw metadata', () => {
       }
     };
 
-    const kataGroups = rawMetadataToKataBundle(groupedMetadataJson);
+    const kataGroups = toKataBundle('ES10', groupedMetadataJson);
     assert.equal(kataGroups.length, 2);
   });
 });
