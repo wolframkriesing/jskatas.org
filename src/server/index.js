@@ -9,7 +9,7 @@ function _renderOnServer(err, metadataJsons) {
   if (err) {
     throw new Error(err);
   } else {
-    const kataBundles = metadataJsons.map(({data, name}) => ({name, kataGroups: RawMetadata.toKataGroups(data)}));
+    const kataBundles = metadataJsons.map(({data, name}) => ({name, kataGroups: RawMetadata.toKataBundle(data)}));
     return preactRender(<Page kataBundles={kataBundles}/>);
   }
 }

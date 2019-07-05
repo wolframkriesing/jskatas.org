@@ -1,4 +1,4 @@
-export default class KataGroups {
+export default class KataBundle {
   
   constructor() {
     this.groups = [];
@@ -13,7 +13,7 @@ export default class KataGroups {
   }
   
   static fromObject(obj) {
-    const groups = new KataGroups();
+    const groups = new KataBundle();
     groups.initializePropertiesFromRawObject(obj);
     groups.sortByNumberOfLinks();
     groups.moveGroupWithNewestKataToBeginning();

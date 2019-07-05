@@ -9,7 +9,7 @@ function _renderInBrowser(err, metadataJsons) {
     console.log(err);
   } else {
     const targetNode = document.getElementById('app');
-    const kataBundles = metadataJsons.map(({data, name}) => ({name, kataGroups: RawMetadata.toKataGroups(data)}));
+    const kataBundles = metadataJsons.map(({data, name}) => ({name, kataGroups: RawMetadata.toKataBundle(data)}));
     render(<Page kataBundles={kataBundles}/>, targetNode);
   }
 }
