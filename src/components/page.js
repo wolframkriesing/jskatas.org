@@ -6,7 +6,7 @@ import FooterComponent from './footer';
 export default class Page extends Component {
 
   render() {
-    let {kataBundles} = this.props;
+    const {kataBundles} = this.props;
     return (
       <div>
         <HeaderComponent />
@@ -52,9 +52,9 @@ class Kata extends Component {
   render() {
     const {kata, isNewest} = this.props;
     const {url, name, level} = kata;
-    const marker =
-      isNewest ? <span className="notification-bubble new">new</span> :
-        (level === 'BEGINNER' ? <span className="notification-bubble easy">easy</span> : '');
+    const marker = isNewest 
+        ? <span className="notification-bubble new">new</span> 
+        : (level === 'BEGINNER' ? <span className="notification-bubble easy">easy</span> : '');
     return <div className="kata">
       {marker}<a href={url} target="_blank"><KataName name={name} /></a>
       <KataDetails kata={kata} />
@@ -66,11 +66,9 @@ class KataName extends Component {
   render() {
     const classNames = [];
     
-    function renderWithName(name) {
-      return <span className={classNames}>
+    const renderWithName = name => <span className={classNames}>
         {name}
-      </span>
-    }
+      </span>;
     
     const {name} = this.props;
     if (name.startsWith('`') && name.endsWith('`')) {
