@@ -3,7 +3,7 @@
 - [ ] separate server- and client-side rendering better, improve code
 
 # verison 2
-- [ ] show plausible stats
+- [x] show plausible stats
 - [ ] show changelog
 - [ ] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas
 - [ ] render proper links for all katas (esp. non-es6katas)
