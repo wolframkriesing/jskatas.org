@@ -19,9 +19,9 @@ loadViaNode(FLAT_METADATA_URL, function(...args) {
 
 import rss from 'node-rss';
 
-const title = 'ES6 katas';
-const link = 'http://es6katas.org';
-const description = 'Learn ECMAScript6 by doing it';
+const title = 'JS katas';
+const link = 'http://jskatas.org';
+const description = 'Learn JavaScript by doing it';
 const author = 'uxebu';
 const feedLink = 'http://es6katas.org/rss/MostRecent.xml';
 const options = {}; //{'CustomTag': 'This is a custom tag under the channel tag!'};
