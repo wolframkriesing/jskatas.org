@@ -45,6 +45,11 @@ export default class FooterComponent extends Component {
           <li className="disabled">
             <i className="fa fa-rss"></i>RSS
           </li>
+          <li>
+            <a href="https://plausible.io/jskatas.org">
+              <i className="fa fa-line-chart"></i>Analytics by plausible.io
+            </a>
+          </li>
         </ul>
       </footer>
     );
