@@ -13,14 +13,4 @@ describe('kata', () => {
     it('ensures the `id` is an int', () =>
       assert.strictEqual(kata().id, Number(id)));
   });
-
-  it('generate the kata link from a path', () => {
-    const path = 'template-strings/multiline';
-    const kata = Kata.fromRawItem({path});
-
-    const expectedUrl =
-      'http://tddbin.com/#?kata=es6/language/template-strings/multiline';
-
-    assert.deepEqual(kata.url, expectedUrl);
-  });
 });
