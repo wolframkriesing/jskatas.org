@@ -39,7 +39,7 @@ export default class FooterComponent extends Component {
           </li>
           <li>
             <a href="https://twitter.com/jskatas">
-              <i className="fa fa-twitter"></i>ES6 Katas
+              <i className="fa fa-twitter"></i>JS Katas
             </a>
           </li>
           <li className="disabled">
