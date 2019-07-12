@@ -5,7 +5,7 @@ import {loadKataBundles} from '../pagedata.js';
 
 const renderInBrowser = kataBundles => {
   const targetNode = document.getElementById('app');
-  render(<Page kataBundles={kataBundles}/>, targetNode);
+  render(<Page kataBundles={kataBundles}/>, document.body, targetNode);
 };
 
 const loadAllKatas = async () => {
