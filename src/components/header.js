@@ -5,9 +5,11 @@ export default class HeaderComponent extends Component {
     return (
       <header>
         <h1>JavaScript Katas</h1>
-        <p>Learn JavaScript (the language and more) by doing it. Fix failing tests. Keep all learnings.</p>
+        <p>
+          Learn JavaScript (the language and more) by doing it. Fix failing
+          tests. Keep all learnings.
+        </p>
       </header>
     );
   }
 }
-

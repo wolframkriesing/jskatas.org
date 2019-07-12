@@ -14,9 +14,6 @@ loadViaNode(FLAT_METADATA_URL, function(...args) {
   createRss(_renderOnServer(...args));
 });
 
-
-
-
 import rss from 'node-rss';
 
 const title = 'JS katas';
@@ -27,14 +24,22 @@ const feedLink = 'http://es6katas.org/rss/MostRecent.xml';
 const options = {}; //{'CustomTag': 'This is a custom tag under the channel tag!'};
 
 function createRss(metadata) {
-  let feed = rss.createNewFeed(title, link, description, author, feedLink, options);
-  metadata.forEach((kata) => {
+  let feed = rss.createNewFeed(
+    title,
+    link,
+    description,
+    author,
+    feedLink,
+    options,
+  );
+  metadata.forEach(kata => {
     const itemTitle = `${kata.groupName} - ${kata.name}`;
-    const analyticsLink = '?utm_source=RSS%20Feed&utm_medium=RSS&utm_campaign=RSS_Syndication';
+    const analyticsLink =
+      '?utm_source=RSS%20Feed&utm_medium=RSS&utm_campaign=RSS_Syndication';
     const itemLink = `http://tddbin.com/${analyticsLink}#?kata=es6/language/${kata.path}`;
     const pubDate = kata.publishDateRfc822;
     const description2 = kata.description;
     feed.addNewItem(itemTitle, itemLink, pubDate, description2, {});
-    });
+  });
   console.log(rss.getFeedXML(feed));
 }

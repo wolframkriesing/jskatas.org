@@ -4,7 +4,7 @@ import KataBundle from './katabundle.js';
 const fromMetadataJsonToKataBundle = groupedMetadataJson => {
   const groups = groupedMetadataJson.groups;
   const groupNames = Object.keys(groups);
-  return groupNames.map((groupName) => {
+  return groupNames.map(groupName => {
     const rawKataItems = groups[groupName].items;
     return KataGroup.fromRawKataItems(groupName, rawKataItems);
   });
@@ -12,6 +12,9 @@ const fromMetadataJsonToKataBundle = groupedMetadataJson => {
 
 export default class RawMetadata {
   static toKataBundle(name, groupedMetadataJson) {
-    return KataBundle.withGroups(name, fromMetadataJsonToKataBundle(groupedMetadataJson));
+    return KataBundle.withGroups(
+      name,
+      fromMetadataJsonToKataBundle(groupedMetadataJson),
+    );
   }
 }

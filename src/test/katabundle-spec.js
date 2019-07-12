@@ -12,14 +12,23 @@ class Kata {
 describe('KataBundle', () => {
   it('must provide the `name` as property', () => {
     const bundle = KataBundle.withGroups('ES11', {});
-    assert.strictEqual(bundle.name, 'ES11')
+    assert.strictEqual(bundle.name, 'ES11');
   });
 });
 describe('sort kata groups', () => {
   const kataGroups = new KataBundle();
-  kataGroups.addGroup(KataGroup.fromRawKataItems('group with 1 kata', [Kata.withId(0)]));
-  kataGroups.addGroup(KataGroup.fromRawKataItems('group with 2 katas', [Kata.withId(1), Kata.withId('21')]));
-  kataGroups.addGroup(KataGroup.fromRawKataItems('group with newest kata', [Kata.withId('111')]));
+  kataGroups.addGroup(
+    KataGroup.fromRawKataItems('group with 1 kata', [Kata.withId(0)]),
+  );
+  kataGroups.addGroup(
+    KataGroup.fromRawKataItems('group with 2 katas', [
+      Kata.withId(1),
+      Kata.withId('21'),
+    ]),
+  );
+  kataGroups.addGroup(
+    KataGroup.fromRawKataItems('group with newest kata', [Kata.withId('111')]),
+  );
   kataGroups.sortByNumberOfLinks();
   kataGroups.moveGroupWithNewestKataToBeginning();
   const allKataGroups = () => kataGroups.allGroups();
@@ -35,22 +44,31 @@ describe('sort kata groups', () => {
 
   it('by name when number of files is the same', () => {
     const kataGroups = new KataBundle();
-    kataGroups.addGroup(KataGroup.fromRawKataItems('group b', [Kata.withId(0)]));
-    kataGroups.addGroup(KataGroup.fromRawKataItems('group a', [Kata.withId(1)]));
+    kataGroups.addGroup(
+      KataGroup.fromRawKataItems('group b', [Kata.withId(0)]),
+    );
+    kataGroups.addGroup(
+      KataGroup.fromRawKataItems('group a', [Kata.withId(1)]),
+    );
     kataGroups.sortByNumberOfLinks();
     kataGroups.moveGroupWithNewestKataToBeginning();
-  
+
     assert.equal(kataGroups.allGroups()[0].name, 'group a');
   });
 });
 
 describe('find newest kata', () => {
-
   it('the newest kata is the one with the highest ID', () => {
     const kataGroups = new KataBundle();
-    kataGroups.addGroup(KataGroup.fromRawKataItems('group with 1 kata', [Kata.withId(2)]));
-    kataGroups.addGroup(KataGroup.fromRawKataItems('group with 2 katas', [Kata.withId(4), Kata.withId(13)]));
+    kataGroups.addGroup(
+      KataGroup.fromRawKataItems('group with 1 kata', [Kata.withId(2)]),
+    );
+    kataGroups.addGroup(
+      KataGroup.fromRawKataItems('group with 2 katas', [
+        Kata.withId(4),
+        Kata.withId(13),
+      ]),
+    );
     assert.equal(kataGroups.isNewestKata(Kata.withId(13)), true);
   });
-  
 });

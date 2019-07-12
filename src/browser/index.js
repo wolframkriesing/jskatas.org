@@ -5,11 +5,11 @@ import {loadKataBundles} from '../pagedata.js';
 
 const renderInBrowser = kataBundles => {
   const targetNode = document.getElementById('app');
-  render(<Page kataBundles={kataBundles}/>, document.body, targetNode);
+  render(<Page kataBundles={kataBundles} />, document.body, targetNode);
 };
 
 const loadAllKatas = async () => {
-  const kataBundles = await loadKataBundles({fetch: loadViaAjax});  
+  const kataBundles = await loadKataBundles({fetch: loadViaAjax});
   renderInBrowser(kataBundles);
 };
 loadAllKatas();

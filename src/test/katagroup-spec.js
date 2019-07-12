@@ -7,28 +7,28 @@ describe('kata group', () => {
   it('provides the `name` given to it', () => {
     const name = 'name';
     const group = KataGroup.fromRawKataItems(name, []);
-    
+
     assert.equal(group.name, name);
   });
   it('provides the `katas`', () => {
     const rawKataItems = [];
     const group = KataGroup.fromRawKataItems('', rawKataItems);
-    
+
     assert.deepEqual(group.katas, rawKataItems);
   });
 
   it('each kata is a Kata instance', () => {
     const rawKataItems = [{}];
     const group = KataGroup.fromRawKataItems('', rawKataItems);
-    
+
     assert.deepEqual(group.katas[0] instanceof Kata, true);
   });
-  
+
   describe('sort the katas by id, so the difficulty goes up', () => {
     const katas = [
       Kata.fromRawItem({id: '11'}),
       Kata.fromRawItem({id: '3'}),
-      Kata.fromRawItem({id: '1'})
+      Kata.fromRawItem({id: '1'}),
     ];
     const group = () => KataGroup.fromRawKataItems('', katas);
     it('1st value must be `1`', () => assert.equal(group().katas[0].id, 1));
@@ -38,24 +38,21 @@ describe('kata group', () => {
 
   describe('get highest ID', () => {
     it('for 1 kata return it`s ID', () => {
-      const katas = [
-        Kata.fromRawItem({id: 1})  
-      ];
+      const katas = [Kata.fromRawItem({id: 1})];
       const group = KataGroup.fromRawKataItems('', katas);
-      
+
       assert.equal(group.highestId, 1);
     });
-    
+
     it('for multiple katas return the highest', () => {
       const katas = [
-        Kata.fromRawItem({id: '11'}),  
-        Kata.fromRawItem({id: '3'}),  
-        Kata.fromRawItem({id: '1'})  
+        Kata.fromRawItem({id: '11'}),
+        Kata.fromRawItem({id: '3'}),
+        Kata.fromRawItem({id: '1'}),
       ];
       const group = KataGroup.fromRawKataItems('', katas);
-      
+
       assert.equal(group.highestId, 11);
     });
   });
-  
 });

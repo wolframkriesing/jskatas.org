@@ -18,14 +18,14 @@ export default class FooterComponent extends Component {
             </a>
           </li>
         </ul>
-        
+
         <ul>
           <li>
             <a href={process.env.TDDBIN_URL}>uses TDDbin</a>
           </li>
           <li>{katasCount} katas</li>
         </ul>
-        
+
         <ul>
           <li>
             <a href={process.env.REPO_URL}>

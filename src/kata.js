@@ -1,9 +1,8 @@
-const rawPathToEs6KataLink = (path) => {
+const rawPathToEs6KataLink = path => {
   return `http://tddbin.com/#?kata=es6/language/${path}`;
 };
 
 export default class Kata {
-  
   static fromRawItem(rawItem) {
     const kata = new Kata();
     kata.initializePropertiesFromRawItem(rawItem);
@@ -11,10 +10,9 @@ export default class Kata {
     kata.id = Number.parseInt(kata.id);
     return kata;
   }
-  
+
   initializePropertiesFromRawItem(rawItem) {
     const allRawKeys = Object.keys(rawItem);
-    allRawKeys.forEach(key => this[key] = rawItem[key]);
+    allRawKeys.forEach(key => (this[key] = rawItem[key]));
   }
-
 }
