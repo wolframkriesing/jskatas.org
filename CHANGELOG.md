@@ -6,7 +6,7 @@
 - [x] show plausible stats
 - [ ] show changelog
 - [ ] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas
-- [ ] render proper links for all katas (esp. non-es6katas)
+- [x] render correct links for all katas (esp. non-es6katas)
 - [x] FIX: don't show the content twice
 
 # version 1
