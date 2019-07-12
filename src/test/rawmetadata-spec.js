@@ -8,7 +8,7 @@ const toKataBundle = (name, metadataJson) => {
 
 class Kata {
   static withId(id) {
-    return {id};
+    return {id, path: 'path'};
   }
 }
 
@@ -21,9 +21,12 @@ describe('Create KataBundle', () => {
       groups: {'group name': group},
     };
 
-    const bundle = toKataBundle('ES6', groupedMetadataJson);
+    const bundle = toKataBundle({name: 'ES6', metadata: groupedMetadataJson, url: 'http://URL'});
     assert.strictEqual(bundle.name, 'ES6');
     assert.strictEqual(bundle.length, 1);
+
+    const firstKata = bundle.groups[0].katas[0];
+    assert.strictEqual(firstKata.url, 'http://URL' + 'path');
   });
 
   it('two groups two KataGroups are created', () => {
@@ -34,7 +37,7 @@ describe('Create KataBundle', () => {
       },
     };
 
-    const kataGroups = toKataBundle('ES10', groupedMetadataJson);
+    const kataGroups = toKataBundle({name: 'ES10', metadata: groupedMetadataJson, url: ''});
     assert.equal(kataGroups.length, 2);
   });
 });

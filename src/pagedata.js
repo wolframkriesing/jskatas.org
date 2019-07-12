@@ -11,16 +11,32 @@ export const loadKataBundles = async ({fetch}) => {
 
   const kataBundles = [];
   kataBundles.push(
-    RawMetadata.toKataBundle('ECMAScript 1', bundlesMetadata[0]),
+    RawMetadata.toKataBundle({
+      name: 'ECMAScript 1',
+      metadata: bundlesMetadata[0],
+      url: process.env.TDDBIN_URL + '#?kata=es1/language/',
+    }),
   );
   kataBundles.push(
-    RawMetadata.toKataBundle('ECMAScript 6', bundlesMetadata[1]),
+    RawMetadata.toKataBundle({
+      name: 'ECMAScript 6',
+      metadata: bundlesMetadata[1],
+      url: process.env.TDDBIN_URL + '#?kata=es6/language/',
+    }),
   );
   kataBundles.push(
-    RawMetadata.toKataBundle('ECMAScript 8', bundlesMetadata[2]),
+    RawMetadata.toKataBundle({
+      name: 'ECMAScript 8',
+      metadata: bundlesMetadata[2],
+      url: process.env.TDDBIN_URL + '#?kata=es8/language/',
+    }),
   );
   kataBundles.push(
-    RawMetadata.toKataBundle('Assertion Library Hamjest', bundlesMetadata[3]),
+    RawMetadata.toKataBundle({
+      name: 'Assertion Library Hamjest',
+      metadata: bundlesMetadata[3],
+      url: process.env.TDDBIN_URL + '#?kata=libraries/hamjest/',
+    }),
   );
   return kataBundles;
 };
