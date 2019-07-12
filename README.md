@@ -1,3 +1,5 @@
+[![Traffic stats](https://img.shields.io/badge/analytics-plausible-%236574cd.svg)](https://plausible.io/jskatas.org)
+
 # jskatas.org
 
 Has evolved out of es6katas.org.
