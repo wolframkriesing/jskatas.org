@@ -50,13 +50,9 @@ footer {
 */
 header {
   margin-bottom: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
   header h1, header p {
     display: inline;
-    margin: 0;
   }
   header p {
     color: #D2D5D3;
