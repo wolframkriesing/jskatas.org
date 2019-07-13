@@ -6,6 +6,8 @@
 - [x] show plausible stats
 - [ ] show changelog
 - [ ] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas
+  - [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
+        can redirect to
 - [x] render correct links for all katas (esp. non-es6katas)
 - [x] FIX: don't show the content twice
 
