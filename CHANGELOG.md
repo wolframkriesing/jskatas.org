@@ -1,6 +1,8 @@
 # Ideas
 
 - [ ] separate server- and client-side rendering better, improve code
+- [ ] allow sorting by "latest", "group by category" (e.g. "object API" "array API", etc.)
+- [ ] allow searching, filter down e.g. when typed "arr" show all that contains the string, in real time
 
 # verison 2
 - [x] show plausible stats
