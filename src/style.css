@@ -114,6 +114,12 @@ footer {
     z-index: 1;
     background: #D2D5D3;
   }
+  .kata.unpublished > a,
+  .kata.unpublished > a > span
+  {
+    background: transparent;
+    color: lightgrey;
+  }
 
 .notification-bubble {
   background: white;
