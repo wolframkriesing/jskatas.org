@@ -6,6 +6,7 @@ export const loadKataBundles = async ({fetch}) => {
     fetch(metadataUrls.es1),
     fetch(metadataUrls.es6),
     fetch(metadataUrls.es8),
+    fetch(metadataUrls.es10),
     fetch(metadataUrls.hamjest),
   ]);
 
@@ -33,8 +34,15 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
-      name: 'Assertion Library Hamjest',
+      name: 'ECMAScript 10',
       metadata: bundlesMetadata[3],
+      url: process.env.TDDBIN_URL + '#?kata=es10/language/',
+    }),
+  );
+  kataBundles.push(
+    RawMetadata.toKataBundle({
+      name: 'Assertion Library Hamjest',
+      metadata: bundlesMetadata[4],
       url: process.env.TDDBIN_URL + '#?kata=libraries/hamjest/',
     }),
   );
