@@ -5,6 +5,7 @@ export const loadKataBundles = async ({fetch}) => {
   const bundlesMetadata = await Promise.all([
     fetch(metadataUrls.es1),
     fetch(metadataUrls.es6),
+    fetch(metadataUrls.es7),
     fetch(metadataUrls.es8),
     fetch(metadataUrls.es10),
     fetch(metadataUrls.hamjest),
@@ -27,22 +28,29 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
-      name: 'ECMAScript 8',
+      name: 'ECMAScript 7',
       metadata: bundlesMetadata[2],
+      url: process.env.TDDBIN_URL + '#?kata=es7/language/',
+    }),
+  );
+  kataBundles.push(
+    RawMetadata.toKataBundle({
+      name: 'ECMAScript 8',
+      metadata: bundlesMetadata[3],
       url: process.env.TDDBIN_URL + '#?kata=es8/language/',
     }),
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
       name: 'ECMAScript 10',
-      metadata: bundlesMetadata[3],
+      metadata: bundlesMetadata[4],
       url: process.env.TDDBIN_URL + '#?kata=es10/language/',
     }),
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
       name: 'Assertion Library Hamjest',
-      metadata: bundlesMetadata[4],
+      metadata: bundlesMetadata[5],
       url: process.env.TDDBIN_URL + '#?kata=libraries/hamjest/',
     }),
   );
