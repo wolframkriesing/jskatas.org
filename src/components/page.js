@@ -25,7 +25,7 @@ class Page extends Component {
         {kataBundles.map(kataBundle => (
           <KataBundle bundle={kataBundle} />
         ))}
-        <FooterComponent katasCount={100} />
+        <FooterComponent katasCount={95} />
       </div>
     );
   }
