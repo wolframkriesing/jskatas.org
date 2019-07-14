@@ -1,8 +1,6 @@
 # Ideas
 
 - [ ] separate server- and client-side rendering better, improve code
-- [ ] show planned (but not yet published) katas, to make `jskatas.org` also a good overview of the JS versions and what they contained
-      and also to make people understand how much more there is to learn
 
 # verison 2
 - [x] show plausible stats
@@ -12,6 +10,11 @@
         can redirect to
 - [x] render correct links for all katas (esp. non-es6katas)
 - [x] FIX: don't show the content twice
+- [ ] show planned (but not yet published) katas, to make `jskatas.org` also a good overview of the JS versions and what they contained
+      and also to make people understand how much more there is to learn
+  - [ ] show the "not yet done" marker in the <Kata> comp
+    - [ ] make the Kata comp testable
+      - [ ] use shallow rendering, or switch to preact and hope for some light-weight testing there     
 
 # version 1
 - [x] use fetch instead of atomic
