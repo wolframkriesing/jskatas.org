@@ -2,7 +2,7 @@ import './configure-env.js';
 import {h} from 'preact';
 import {render as renderToString} from 'preact-render-to-string';
 import {loadViaNode} from './http-get.js';
-import Page from '../components/page.js';
+import {Page} from '../components/page.js';
 import {loadKataBundles} from '../pagedata.js';
 
 const renderOnServer = kataBundles =>

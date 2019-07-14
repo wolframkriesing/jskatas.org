@@ -3,7 +3,7 @@ import {h, Component} from 'preact';
 import HeaderComponent from './header';
 import FooterComponent from './footer';
 
-export default class Page extends Component {
+class Page extends Component {
   render() {
     const {kataBundles} = this.props;
     return (
@@ -140,3 +140,5 @@ class KataLinks extends Component {
     );
   }
 }
+
+export {Kata, Page};

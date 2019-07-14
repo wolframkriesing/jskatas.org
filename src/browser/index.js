@@ -1,6 +1,6 @@
 import {render, h} from 'preact';
 import {loadViaAjax} from './ajax.js';
-import Page from '../components/page.js';
+import {Page} from '../components/page.js';
 import {loadKataBundles} from '../pagedata.js';
 
 const renderInBrowser = kataBundles => {
