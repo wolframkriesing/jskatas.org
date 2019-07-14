@@ -131,4 +131,7 @@ footer {
     margin-left: -2.8em;
     color: #7AB75C;
   }
+  .notification-bubble.unpublished {
+    opacity: 0.8;
+  }
 

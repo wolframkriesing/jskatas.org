@@ -67,14 +67,13 @@ class KataGroup extends Component {
 class Kata extends Component {
   render() {
     const {kata, isNewest} = this.props;
-    const {url, name, level} = kata;
-    const marker = isNewest ? (
-      <span className="notification-bubble new">new</span>
-    ) : level === 'BEGINNER' ? (
-      <span className="notification-bubble easy">easy</span>
-    ) : (
-      ''
-    );
+    const {url, name, level, isPublished} = kata;
+    const marker = new Map([
+      [true, ''], // the default value
+      [level === 'BEGINNER', <span className="notification-bubble easy">easy</span>],
+      [isNewest , <span className="notification-bubble new">new</span>],
+      [!isPublished, <span className="notification-bubble unpublished">in development ...</span>],
+    ]).get(true);
     return (
       <div className="kata">
         {marker}
