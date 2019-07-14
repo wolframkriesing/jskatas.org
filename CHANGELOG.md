@@ -1,6 +1,8 @@
 # Ideas
 
 - [ ] separate server- and client-side rendering better, improve code
+- [ ] show planned (but not yet published) katas, to make `jskatas.org` also a good overview of the JS versions and what they contained
+      and also to make people understand how much more there is to learn
 
 # verison 2
 - [x] show plausible stats
