@@ -3,6 +3,7 @@ export default class Kata {
     const kata = new Kata();
     kata.initializePropertiesFromRawItem(rawItem);
     kata.id = Number.parseInt(kata.id);
+    kata.isPublished = 'publishDateUTC' in kata;
     return kata;
   }
 
