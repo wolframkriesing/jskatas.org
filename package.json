@@ -18,7 +18,7 @@
     "build:app": "parcel build src/browser/index.js --out-file dist/index.min.js --no-cache --no-source-maps",
     "build:rss": "mkdir -p dist/rss && babel-node src/rss-feed.js > dist/rss/MostRecent.xml",
     "build:css": "cp src/style.css dist",
-    "build:media": "npm run build:css; cp -r src/favicon.ico dist",
+    "build:media": "npm run build:css; cp -r src/favicon.ico dist; mkdir -p dist/components; cp src/components/KataName.js dist/components/",
     "start": "concurrently 'npm run watch:server-rendering' 'npm run watch:app' 'npm run watch:media' 'ws --cors.origin=* --port 9779 --directory dist'",
     "render-on-server": "mkdir -p dist; ./scripts/render-html.sh",
     "watch:app": "watch 'npm run dev-build-app' src --wait=1",

@@ -80,27 +80,11 @@ class Kata extends Component {
       <div className={classNames.join(' ')}>
         {marker}
         <a href={url} target="_blank">
-          <KataName name={name} />
+          <kata-name>{name}</kata-name>
         </a>
         <KataDetails kata={kata} />
       </div>
     );
-  }
-}
-
-class KataName extends Component {
-  render() {
-    const classNames = [];
-
-    const renderWithName = name => <span className={classNames}>{name}</span>;
-
-    const {name} = this.props;
-    if (name.startsWith('`') && name.endsWith('`')) {
-      classNames.push('code');
-      const sourceCode = name.substr(1, name.length - 2);
-      return renderWithName(sourceCode);
-    }
-    return renderWithName(name);
   }
 }
 
