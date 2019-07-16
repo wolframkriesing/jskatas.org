@@ -15,7 +15,7 @@
 - [x] show planned (but not yet published) katas, to make `jskatas.org` also a good overview of the JS versions and what they contained
       and also to make people understand how much more there is to learn
   - [x] show the "in development" marker in the <Kata> comp
-- [ ] render kata names with ` in them be partly <code>
+- [x] render kata names with ` in them be partly <code>
 - [ ] capitalize kata name if it does NOT start with code  
 
 # version 1
