@@ -9,6 +9,10 @@ class Page extends Component {
     return (
       <div>
         <HeaderComponent />
+        <p id="filterbar">
+          <input id="show-descriptions" type="checkbox" checked={this.state.showDescriptions} onClick={e => this.toggle(e)}/>
+          <label htmlFor="show-descriptions">Show descriptions</label>
+        </p>
         <p style={{padding: '1rem'}}>
           I learned ES6 by writing it and failing. Out of this the es6katas
           evolved. And since, this allowed me to always again go back and
@@ -21,10 +25,6 @@ class Page extends Component {
           Enjoy and I hope you have fun learning with it.
           <br />
           Wolfram Kriesing
-        </p>
-        <p>
-          <input id="show-description" type="checkbox" checked={this.state.showDescriptions} onClick={e => this.toggle(e)}/>
-          <label htmlFor="show-description">Show descriptions</label>
         </p>
         {kataBundles.map(kataBundle => (
           <KataBundle bundle={kataBundle} options={this.state} />

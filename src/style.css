@@ -49,7 +49,6 @@ footer {
   header 
 */
 header {
-  margin-bottom: 1em;
 }
   header h1, header p {
     display: inline;
@@ -93,7 +92,11 @@ footer {
   }
   
   
-  
+#filterbar {
+  margin: 0;
+  padding: 0.5rem;
+  background: antiquewhite;
+}
   
   
   
