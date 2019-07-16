@@ -4,7 +4,7 @@ template.innerHTML = `
       :host {
       }
       code {
-        color: #9A9A9A;
+        color: black;
         background: #EEEEEE;
       }
       slot {
@@ -37,7 +37,7 @@ class KataName extends HTMLElement {
         const text = node.textContent;
 
         if (!text.includes('`')) {
-          this.$kataName.appendChild(document.createTextNode(text));
+          this.$kataName.appendChild(document.createTextNode(upperCaseFirstLetter(text)));
           return;
         }
 
@@ -49,7 +49,7 @@ class KataName extends HTMLElement {
         }
         const pieces = text.split('`');
 
-        const text1 = document.createTextNode(pieces[0]);
+        const text1 = document.createTextNode(upperCaseFirstLetter(pieces[0]));
         this.$kataName.appendChild(text1);
 
         const code = document.createElement('code');
@@ -65,5 +65,10 @@ class KataName extends HTMLElement {
   disconnectedCallback() {
   }
 }
+
+const upperCaseFirstLetter = word => {
+  if (word.length === 0) return word;
+  return word[0].toUpperCase() + word.substring(1);
+};
 
 customElements.define('kata-name', KataName);
