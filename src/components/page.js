@@ -72,35 +72,19 @@ class Kata extends Component {
       [true, ''], // the default value
       [level === 'BEGINNER', <span className="notification-bubble easy">easy</span>],
       [isNewest , <span className="notification-bubble new">new</span>],
-      [!isPublished, <span className="notification-bubble unpublished">in development ...</span>],
+      [!isPublished, <span className="notification-bubble unpublished">planned</span>],
     ]).get(true);
     const classNames = ['kata'];
     if (!isPublished) classNames.push('unpublished');
     return (
       <div className={classNames.join(' ')}>
-        {marker}
         <a href={url} target="_blank">
-          <KataName name={name} />
+          <kata-name>{name}</kata-name>
         </a>
+        {marker}
         <KataDetails kata={kata} />
       </div>
     );
-  }
-}
-
-class KataName extends Component {
-  render() {
-    const classNames = [];
-
-    const renderWithName = name => <span className={classNames}>{name}</span>;
-
-    const {name} = this.props;
-    if (name.startsWith('`') && name.endsWith('`')) {
-      classNames.push('code');
-      const sourceCode = name.substr(1, name.length - 2);
-      return renderWithName(sourceCode);
-    }
-    return renderWithName(name);
   }
 }
 
