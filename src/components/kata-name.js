@@ -3,8 +3,16 @@ template.innerHTML = `
     <style>
       :host {
       }
+      code {
+        color: #9A9A9A;
+        background: #EEEEEE;
+      }
+      slot {
+        display: none;
+      }
     </style>
     <slot>missing kata name</slot>
+    <span id="kataName"></span>
 `;
 
 class KataName extends HTMLElement {
@@ -16,13 +24,12 @@ class KataName extends HTMLElement {
   _selectInShadowRoot(selector) {
     return this.shadowRoot && this.shadowRoot.querySelector(selector);
   }
-  get $chart() {
-    return this._selectInShadowRoot('canvas');
+  get $kataName() {
+    return this._selectInShadowRoot('#kataName');
   }
   connectedCallback() {
     const slots = this.shadowRoot.querySelectorAll('slot');
     const f = (e) => {
-      slots[0].removeEventListener('slotchange', f); // remove right away, so our changes dont cause eternal loops
       const nodes = slots[0].assignedNodes();
       const isComponentConnected = nodes.length > 0;
       if (isComponentConnected) {
@@ -30,29 +37,27 @@ class KataName extends HTMLElement {
         const text = node.textContent;
 
         if (!text.includes('`')) {
+          this.$kataName.appendChild(document.createTextNode(text));
           return;
         }
 
         if (text.startsWith('`') && text.endsWith('`')) {
           const code = document.createElement('code');
           code.innerText = text.replace(/`/g, '');
-          nodes[0].parentNode.appendChild(code);
-          nodes[0].parentNode.removeChild(nodes[0]);
+          this.$kataName.appendChild(code);
           return;
         }
         const pieces = text.split('`');
 
         const text1 = document.createTextNode(pieces[0]);
-        nodes[0].parentNode.appendChild(text1);
+        this.$kataName.appendChild(text1);
 
         const code = document.createElement('code');
         code.innerText = pieces[1];
-        nodes[0].parentNode.appendChild(code);
+        this.$kataName.appendChild(code);
 
         const text2 = document.createTextNode(pieces.slice(2).join(''));
-        nodes[0].parentNode.appendChild(text2);
-
-        nodes[0].parentNode.removeChild(nodes[0]);
+        this.$kataName.appendChild(text2);
       }
     };
     slots[0].addEventListener('slotchange', f);
