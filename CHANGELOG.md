@@ -3,13 +3,17 @@
 - [ ] separate server- and client-side rendering better, improve code
 - [ ] allow sorting by "latest", "group by category" (e.g. "object API" "array API", etc.)
 - [ ] allow searching, filter down e.g. when typed "arr" show all that contains the string, in real time
-
-# verison 2
-- [x] show plausible stats
 - [ ] show changelog
+- [ ] show description below kata
+- [ ] show learnings (derived from kata file) on demand, this is the describes+its
+- [ ] allow searching for katas, incl. the descriptions and describes+its
+  - [ ] this might become a book, just in reverse   
 - [ ] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas
   - [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
         can redirect to
+
+# verison 2
+- [x] show plausible stats
 - [x] render correct links for all katas (esp. non-es6katas)
 - [x] FIX: don't show the content twice
 - [x] show planned (but not yet published) katas, to make `jskatas.org` also a good overview of the JS versions and what they contained
