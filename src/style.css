@@ -122,6 +122,10 @@ footer {
   .kata.unpublished a {
     opacity: 0.3;
   }
+  .group p.description {
+    font-size: small;
+    margin: 0.2rem 0 0.5rem 0;
+  }
 
 .notification-bubble {
   background: white;

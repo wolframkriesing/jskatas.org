@@ -4,13 +4,15 @@
 - [ ] allow sorting by "latest", "group by category" (e.g. "object API" "array API", etc.)
 - [ ] allow searching, filter down e.g. when typed "arr" show all that contains the string, in real time
 - [ ] show changelog
-- [ ] show description below kata
 - [ ] show learnings (derived from kata file) on demand, this is the describes+its
 - [ ] allow searching for katas, incl. the descriptions and describes+its
   - [ ] this might become a book, just in reverse   
 - [ ] add a feedback tool, just like Uku has on plausible        
 - [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
       can redirect to
+
+# verison 3
+- [ ] show description below kata
 
 # verison 2
 - [x] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas - DONE

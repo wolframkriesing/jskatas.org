@@ -4,7 +4,7 @@ import HeaderComponent from './header';
 import FooterComponent from './footer';
 
 class Page extends Component {
-  render() {
+  render({}, {showDescriptions = false}) {
     const {kataBundles} = this.props;
     return (
       <div>
@@ -22,18 +22,25 @@ class Page extends Component {
           <br />
           Wolfram Kriesing
         </p>
+        <p>
+          <input id="show-description" type="checkbox" checked={this.state.showDescriptions} onClick={e => this.toggle(e)}/>
+          <label htmlFor="show-description">Show descriptions</label>
+        </p>
         {kataBundles.map(kataBundle => (
-          <KataBundle bundle={kataBundle} />
+          <KataBundle bundle={kataBundle} options={this.state} />
         ))}
         <FooterComponent katasCount={95} />
       </div>
     );
   }
+  toggle(e) {
+    this.setState({showDescriptions: e.target.checked});
+  }
 }
 
 class KataBundle extends Component {
   render() {
-    const {bundle} = this.props;
+    const {bundle, options} = this.props;
     return (
       <div>
         <h2>{bundle.name}</h2>
@@ -42,6 +49,7 @@ class KataBundle extends Component {
             group={group}
             isNewestKataCheck={bundle.isNewestKata.bind(bundle)}
             key={group.name}
+            options={options}
           />
         ))}
       </div>
@@ -51,13 +59,12 @@ class KataBundle extends Component {
 
 class KataGroup extends Component {
   render() {
-    const group = this.props.group;
-    const {isNewestKataCheck} = this.props;
+    const {group, options, isNewestKataCheck} = this.props;
     return (
       <div className="group">
         <h3>{group.name}</h3>
         {group.katas.map(kata => (
-          <Kata kata={kata} isNewest={isNewestKataCheck(kata)} key={kata.id} />
+          <Kata kata={kata} isNewest={isNewestKataCheck(kata)} key={kata.id} options={options} />
         ))}
       </div>
     );
@@ -66,7 +73,7 @@ class KataGroup extends Component {
 
 class Kata extends Component {
   render() {
-    const {kata, isNewest} = this.props;
+    const {kata, isNewest, options} = this.props;
     const {url, name, level, isPublished} = kata;
     const marker = new Map([
       [true, ''], // the default value
@@ -76,13 +83,19 @@ class Kata extends Component {
     ]).get(true);
     const classNames = ['kata'];
     if (!isPublished) classNames.push('unpublished');
+    const description = options.showDescriptions
+      ? <p className="description">{kata.description}</p>
+      : null;
     return (
-      <div className={classNames.join(' ')}>
-        <a href={url} target="_blank">
-          <kata-name>{name}</kata-name>
-        </a>
-        {marker}
-        <KataDetails kata={kata} />
+      <div>
+        <div className={classNames.join(' ')}>
+          <a href={url} target="_blank">
+            <kata-name>{name}</kata-name>
+          </a>
+          {marker}
+          <KataDetails kata={kata} />
+        </div>
+        {description}
       </div>
     );
   }
