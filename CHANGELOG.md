@@ -8,11 +8,12 @@
 - [ ] show learnings (derived from kata file) on demand, this is the describes+its
 - [ ] allow searching for katas, incl. the descriptions and describes+its
   - [ ] this might become a book, just in reverse   
-- [ ] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas
-  - [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
-        can redirect to
+- [ ] add a feedback tool, just like Uku has on plausible        
+- [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
+      can redirect to
 
 # verison 2
+- [x] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas - DONE
 - [x] show plausible stats
 - [x] render correct links for all katas (esp. non-es6katas)
 - [x] FIX: don't show the content twice
