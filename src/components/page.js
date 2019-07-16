@@ -72,16 +72,16 @@ class Kata extends Component {
       [true, ''], // the default value
       [level === 'BEGINNER', <span className="notification-bubble easy">easy</span>],
       [isNewest , <span className="notification-bubble new">new</span>],
-      [!isPublished, <span className="notification-bubble unpublished">in development ...</span>],
+      [!isPublished, <span className="notification-bubble unpublished">planned</span>],
     ]).get(true);
     const classNames = ['kata'];
     if (!isPublished) classNames.push('unpublished');
     return (
       <div className={classNames.join(' ')}>
-        {marker}
         <a href={url} target="_blank">
           <kata-name>{name}</kata-name>
         </a>
+        {marker}
         <KataDetails kata={kata} />
       </div>
     );
