@@ -1,6 +1,6 @@
 {
   "name": "jskatas.org",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "jskatas.org site",
   "browser": {
     "react": "./src/shim/react.js"
