@@ -3,14 +3,17 @@ import {h, Component} from 'preact';
 import HeaderComponent from './header';
 import FooterComponent from './footer';
 
+const noop = () => {};
+
 class Page extends Component {
-  render({}, {showDescriptions = false}) {
+  render({showDescriptions = false, onUpdateOption = noop}, {}) {
     const {kataBundles} = this.props;
+    const checked = this.state.showDescriptions === undefined ? showDescriptions : this.state.showDescriptions;
     return (
       <div>
         <HeaderComponent />
         <p id="filterbar">
-          <input id="show-descriptions" type="checkbox" checked={this.state.showDescriptions} onClick={e => this.toggle(e)}/>
+          <input id="show-descriptions" type="checkbox" checked={checked} onClick={e => this.toggle(e, onUpdateOption)}/>
           <label htmlFor="show-descriptions">Show descriptions</label>
         </p>
         <p style={{padding: '1rem'}}>
@@ -33,8 +36,10 @@ class Page extends Component {
       </div>
     );
   }
-  toggle(e) {
-    this.setState({showDescriptions: e.target.checked});
+  toggle(e, onUpdateOption) {
+    const showDescriptions = e.target.checked;
+    this.setState({showDescriptions: showDescriptions});
+    onUpdateOption('showDescriptions', showDescriptions);
   }
 }
 
