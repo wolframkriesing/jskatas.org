@@ -1,19 +1,18 @@
-import {h, Component} from 'preact';
-
+import {h} from 'preact';
+import {Component} from 'preact';
 import HeaderComponent from './header';
 import FooterComponent from './footer';
 
 const noop = () => {};
 
 class Page extends Component {
-  render({showDescriptions = false, onUpdateOption = noop}, {}) {
+  render({showDescriptions = false, onUpdateOption = noop}) {
     const {kataBundles} = this.props;
-    const checked = this.state.showDescriptions === undefined ? showDescriptions : this.state.showDescriptions;
     return (
       <div>
         <HeaderComponent />
         <p id="filterbar">
-          <input id="show-descriptions" type="checkbox" checked={checked} onClick={e => this.toggle(e, onUpdateOption)}/>
+          <input id="show-descriptions" type="checkbox" checked={showDescriptions} onClick={e => this.toggleShowDescriptions(e, onUpdateOption)}/>
           <label htmlFor="show-descriptions">Show descriptions</label>
         </p>
         <p style={{padding: '1rem'}}>
@@ -30,16 +29,14 @@ class Page extends Component {
           Wolfram Kriesing
         </p>
         {kataBundles.map(kataBundle => (
-          <KataBundle bundle={kataBundle} options={this.state} />
+          <KataBundle bundle={kataBundle} options={{showDescriptions}} />
         ))}
         <FooterComponent katasCount={95} />
       </div>
     );
   }
-  toggle(e, onUpdateOption) {
-    const showDescriptions = e.target.checked;
-    this.setState({showDescriptions: showDescriptions});
-    onUpdateOption('showDescriptions', showDescriptions);
+  toggleShowDescriptions(e, onUpdateOption) {
+    onUpdateOption('showDescriptions', e.target.checked);
   }
 }
 
