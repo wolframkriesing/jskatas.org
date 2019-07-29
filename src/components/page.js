@@ -32,91 +32,75 @@ const KataBundle = ({bundle}) => {
   return (html`
     <div>
       <h2>${bundle.name}</h2>
+      ${bundle.allGroups().map(group =>
+        KataGroup({group, isNewestKataCheck: bundle.isNewestKata.bind(bundle)})
+      )}
     </div>
   `);
 };
-/*
 
-      ${bundle.allGroups().map(group =>
-        KataGroup({group, isNewestKataCheck: bundle.isNewestKata.bind(bundle), key: group.name})
+const KataGroup = ({group, isNewestKataCheck}) =>
+  html`
+    <div class="group">
+      <h3>${group.name}</h3>
+      ${group.katas.map(kata =>
+        Kata({kata, isNewest: isNewestKataCheck(kata)})
       )}
+    </div>
+  `
+;
 
-class KataGroup extends Component {
-  render() {
-    const group = this.props.group;
-    const {isNewestKataCheck} = this.props;
-    return (
-      <div class="group">
-        <h3>{group.name}</h3>
-        {group.katas.map(kata => (
-          <Kata kata={kata} isNewest={isNewestKataCheck(kata)} key={kata.id} />
-        ))}
-      </div>
-    );
-  }
-}
+const Kata = ({kata, isNewest}) => {
+  const {url, name, level, isPublished} = kata;
+  const marker = new Map([
+    [true, ''], // the default value
+    [level === 'BEGINNER', html`<span class="notification-bubble easy">easy</span>`],
+    [isNewest , html`<span class="notification-bubble new">new</span>`],
+    [!isPublished, html`<span class="notification-bubble unpublished">planned</span>`],
+  ]).get(true);
+  const classNames = ['kata'];
+  if (!isPublished) classNames.push('unpublished');
+  return (html`
+    <div class=${classNames.join(' ')}>
+      <a href=${url} target="_blank">
+        <kata-name>${name}</kata-name>
+      </a>
+      ${marker}
+      ${KataDetails({kata})}
+    </div>
+  `);
+};
 
-class Kata extends Component {
-  render() {
-    const {kata, isNewest} = this.props;
-    const {url, name, level, isPublished} = kata;
-    const marker = new Map([
-      [true, ''], // the default value
-      [level === 'BEGINNER', <span class="notification-bubble easy">easy</span>],
-      [isNewest , <span class="notification-bubble new">new</span>],
-      [!isPublished, <span class="notification-bubble unpublished">planned</span>],
-    ]).get(true);
-    const classNames = ['kata'];
-    if (!isPublished) classNames.push('unpublished');
-    return (
-      <div class=${classNames.join(' ')}>
-        <a href={url} target="_blank">
-          <kata-name>{name}</kata-name>
-        </a>
-        {marker}
-        <KataDetails kata={kata} />
-      </div>
-    );
-  }
-}
+const KataDetails = ({kata}) =>
+  html`
+    <span class="details">
+      <h3>
+        ${kata.name} (#${kata.id})
+      </h3>
+      <p>${kata.description}</p>
+      Difficulty: ${kata.level.toLowerCase()}
+      <br />
+      ${KataLinks({links: kata.links})}
+    </span>
+  `
+;
 
-class KataDetails extends Component {
-  render() {
-    const {kata} = this.props;
-    return (
-      <span class="details">
-        <h3>
-          {kata.name} (#{kata.id})
-        </h3>
-        <p>{kata.description}</p>
-        Difficulty: {kata.level.toLowerCase()}
-        <br />
-        <KataLinks links={kata.links} />
-      </span>
-    );
+const KataLinks = ({links = []}) => {
+  if (links.length === 0) {
+    return null;
   }
-}
-
-class KataLinks extends Component {
-  render() {
-    const {links = []} = this.props;
-    if (links.length === 0) {
-      return null;
-    }
-    return (
-      <section>
-        <h3>Links for futher reading</h3>
-        <ul>
-          {links.map(link => (
-            <li>
-              <a href={link.url}>{link.comment}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    );
-  }
-}
-*/
+  return html`
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        ${links.map(link => html`
+          <li>
+            <a href=${link.url}>${link.comment}</a>
+          </li>
+        `)}
+      </ul>
+    </section>
+  `;
+};
 
 export {Page};
