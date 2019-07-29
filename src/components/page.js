@@ -87,7 +87,7 @@ const KataDetails = ({kata}) =>
 
 const KataLinks = ({links = []}) => {
   if (links.length === 0) {
-    return null;
+    return '';
   }
   return html`
     <section>
