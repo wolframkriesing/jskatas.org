@@ -12,7 +12,10 @@
 - [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
       can redirect to
 
-# verison 2
+# version 3
+- [ ] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
+
+# version 2
 - [x] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas - DONE
 - [x] show plausible stats
 - [x] render correct links for all katas (esp. non-es6katas)
