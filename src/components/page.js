@@ -3,8 +3,8 @@ import {html} from '../lit-html.js';
 import {HeaderComponent} from './header.js';
 import {FooterComponent} from './footer.js';
 
-const Page = ({kataBundles}) => {
-  return (html`
+const Page = ({kataBundles}) =>
+  html`
     <div>
       ${HeaderComponent()}
       <p style="padding: 1rem">
@@ -25,19 +25,19 @@ const Page = ({kataBundles}) => {
       )}
       ${FooterComponent({katasCount: 95})}
     </div>
-  `);
-};
+  `
+;
 
-const KataBundle = ({bundle}) => {
-  return (html`
+const KataBundle = ({bundle}) =>
+  html`
     <div>
       <h2>${bundle.name}</h2>
       ${bundle.allGroups().map(group =>
         KataGroup({group, isNewestKataCheck: bundle.isNewestKata.bind(bundle)})
       )}
     </div>
-  `);
-};
+  `
+;
 
 const KataGroup = ({group, isNewestKataCheck}) =>
   html`
@@ -60,7 +60,7 @@ const Kata = ({kata, isNewest}) => {
   ]).get(true);
   const classNames = ['kata'];
   if (!isPublished) classNames.push('unpublished');
-  return (html`
+  return html`
     <div class=${classNames.join(' ')}>
       <a href=${url} target="_blank">
         <kata-name>${name}</kata-name>
@@ -68,7 +68,7 @@ const Kata = ({kata, isNewest}) => {
       ${marker}
       ${KataDetails({kata})}
     </div>
-  `);
+  `;
 };
 
 const KataDetails = ({kata}) =>
