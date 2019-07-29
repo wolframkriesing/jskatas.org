@@ -1,15 +1,15 @@
-import {h, Component} from 'preact';
+import {html} from '../lit-html.js';
 
-export default class HeaderComponent extends Component {
-  render() {
-    return (
-      <header>
-        <h1>JavaScript Katas</h1>
-        <p>
-          Learn JavaScript (the language and more) by doing it. Fix failing
-          tests. Keep all learnings.
-        </p>
-      </header>
-    );
-  }
-}
+const HeaderComponent = () => {
+  return html`
+    <header>
+      <h1>JavaScript Katas</h1>
+      <p>
+        Learn JavaScript (the language and more) by doing it. Fix failing tests.
+        Keep all learnings.
+      </p>
+    </header>
+  `;
+};
+
+export {HeaderComponent};
