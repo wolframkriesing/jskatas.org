@@ -1,4 +1,4 @@
-import {html} from '../lit-html.js';
+import {html, nothing} from '../lit-html.js';
 
 import {HeaderComponent} from './header.js';
 import {FooterComponent} from './footer.js';
@@ -87,7 +87,7 @@ const KataDetails = ({kata}) =>
 
 const KataLinks = ({links = []}) => {
   if (links.length === 0) {
-    return '';
+    return nothing;
   }
   return html`
     <section>

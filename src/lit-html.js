@@ -1,3 +1,3 @@
-import {html, render} from 'https://unpkg.com/lit-html?module';
+import {html, render, nothing} from 'https://unpkg.com/lit-html?module';
 
-export {html, render};
+export {html, render, nothing};
