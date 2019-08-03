@@ -1,6 +1,6 @@
 let html, render, nothing;
 
-const runsInBrowser = typeof 'window' !== undefined;
+const runsInBrowser = typeof document !== 'undefined';
 
 if (runsInBrowser) {
   const litHtml = window.litHtml;
