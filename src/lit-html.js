@@ -1,3 +1,22 @@
-import {html, render, nothing} from 'https://unpkg.com/lit-html?module';
+let html, render, nothing;
+
+const runsInBrowser = typeof 'window' !== undefined;
+
+if (runsInBrowser) {
+  const litHtml = window.litHtml;
+  html = litHtml.html;
+  render = litHtml.render;
+  nothing = litHtml.nothing;
+} else {
+  render = () => {};
+  nothing = () => {};
+
+  html = (s, ...values) => {
+    const renderValue = value => Array.isArray(value) ? value.join('') : value;
+    const value = i => i < values.length ? renderValue(values[i]) : '';
+    return s.map((s, i) => s + value(i)).join('');
+  };
+}
 
 export {html, render, nothing};
+
