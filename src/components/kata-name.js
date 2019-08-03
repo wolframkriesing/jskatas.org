@@ -29,7 +29,7 @@ class KataName extends HTMLElement {
   }
   connectedCallback() {
     const slots = this.shadowRoot.querySelectorAll('slot');
-    const f = (e) => {
+    const f = e => {
       const nodes = slots[0].assignedNodes();
       const isComponentConnected = nodes.length > 0;
       if (isComponentConnected) {
@@ -37,7 +37,9 @@ class KataName extends HTMLElement {
         const text = node.textContent;
 
         if (!text.includes('`')) {
-          this.$kataName.appendChild(document.createTextNode(upperCaseFirstLetter(text)));
+          this.$kataName.appendChild(
+            document.createTextNode(upperCaseFirstLetter(text)),
+          );
           return;
         }
 
@@ -62,8 +64,7 @@ class KataName extends HTMLElement {
     };
     slots[0].addEventListener('slotchange', f);
   }
-  disconnectedCallback() {
-  }
+  disconnectedCallback() {}
 }
 
 const upperCaseFirstLetter = word => {

@@ -21,7 +21,11 @@ describe('Create KataBundle', () => {
       groups: {'group name': group},
     };
 
-    const bundle = toKataBundle({name: 'ES6', metadata: groupedMetadataJson, url: 'http://URL'});
+    const bundle = toKataBundle({
+      name: 'ES6',
+      metadata: groupedMetadataJson,
+      url: 'http://URL',
+    });
     assert.strictEqual(bundle.name, 'ES6');
     assert.strictEqual(bundle.length, 1);
 
@@ -37,7 +41,11 @@ describe('Create KataBundle', () => {
       },
     };
 
-    const kataGroups = toKataBundle({name: 'ES10', metadata: groupedMetadataJson, url: ''});
+    const kataGroups = toKataBundle({
+      name: 'ES10',
+      metadata: groupedMetadataJson,
+      url: '',
+    });
     assert.equal(kataGroups.length, 2);
   });
 });

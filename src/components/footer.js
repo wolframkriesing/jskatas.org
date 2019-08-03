@@ -2,7 +2,7 @@ import {TDDBIN_URL, REPO_URL, ANALYTICS_URL} from '../env.js';
 import {html} from '../lit-html.js';
 
 const FooterComponent = ({katasCount}) => {
-  return (html`
+  return html`
     <footer>
       <ul>
         <li>by</li>
@@ -12,9 +12,7 @@ const FooterComponent = ({katasCount}) => {
           </a>
         </li>
         <li>
-          <a href="/imprint">
-            <i class="fa fa-paragraph"></i>imprint
-          </a>
+          <a href="/imprint"> <i class="fa fa-paragraph"></i>imprint </a>
         </li>
       </ul>
 
@@ -41,9 +39,7 @@ const FooterComponent = ({katasCount}) => {
             <i class="fa fa-twitter"></i>JS Katas
           </a>
         </li>
-        <li class="disabled">
-          <i class="fa fa-rss"></i>RSS
-        </li>
+        <li class="disabled"><i class="fa fa-rss"></i>RSS</li>
         <li>
           <a href=${ANALYTICS_URL}>
             <i class="fa fa-line-chart"></i>Analytics by plausible.io
@@ -51,7 +47,7 @@ const FooterComponent = ({katasCount}) => {
         </li>
       </ul>
     </footer>
-  `);
+  `;
 };
 
 export {FooterComponent};
