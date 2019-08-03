@@ -11,8 +11,13 @@
   <script src="components/kata-name.js" type="module"></script>
 </head>
 <body>
-  <div id="app">${prerenderedHtml}</div>
-  <script src="./index.min.js" type="application/javascript"></script>
+  <div id="app"></div>
+  <script type="module">
+    (async () => {
+      window.litHtml = await import('https://unpkg.com/lit-html?module');
+      await import('./browser/index.js');
+    })();
+  </script>
   <script async defer type="text/javascript" src="https://plausible.io/js/plausible.js"></script>
 </body>
 </html>

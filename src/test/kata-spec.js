@@ -19,7 +19,9 @@ describe('kata', () => {
       assert.equal(kata.isPublished, false);
     });
     it('an existing `publishDateUTC` sets `isPublished=true`', () => {
-      const kata = Kata.fromRawItem({publishDateUTC: "2015-03-13T07:55:00.000Z"});
+      const kata = Kata.fromRawItem({
+        publishDateUTC: '2015-03-13T07:55:00.000Z',
+      });
       assert.equal(kata.isPublished, true);
     });
   });

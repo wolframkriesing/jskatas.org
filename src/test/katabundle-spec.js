@@ -5,7 +5,7 @@ import KataGroup from '../katagroup';
 
 class Kata {
   static withId(id) {
-    return {id, publishDateUTC: new Date(),};
+    return {id, publishDateUTC: new Date()};
   }
   static withPublishDate(publishDateUTC) {
     return {id: 42, publishDateUTC};
@@ -35,7 +35,7 @@ describe('sort kata groups', () => {
   kataGroups.addGroup(
     KataGroup.fromRawKataItems('group with newest kata', [
       Kata.withoutPublishDate(),
-      Kata.withPublishDate("2015-03-13T07:55:00.000Z")
+      Kata.withPublishDate('2015-03-13T07:55:00.000Z'),
     ]),
   );
   kataGroups.sortByNumberOfLinks();
