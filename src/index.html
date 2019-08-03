@@ -12,7 +12,12 @@
 </head>
 <body>
   <div id="app"></div>
-  <script type="module" src="./browser/index.js"></script>
+  <script type="module">
+    (async () => {
+      window.litHtml = await import('https://unpkg.com/lit-html?module');
+      await import('./browser/index.js');
+    })();
+  </script>
   <script async defer type="text/javascript" src="https://plausible.io/js/plausible.js"></script>
 </body>
 </html>
