@@ -18,8 +18,7 @@
 - [ ] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
   - [x] make it render client-side
   - [ ] make the .env work again
-  - [ ] make server-side rendering work again! 
-  - [ ] 
+  - [x] make server-side rendering work again! 
 
 # version 2
 - [x] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas - DONE
