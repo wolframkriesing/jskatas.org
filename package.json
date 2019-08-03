@@ -37,7 +37,6 @@
     "dotenv": "^8.0.0",
     "esm": "^3.2.25",
     "kavun": "^3.0.0",
-    "lit-html": "^1.1.1",
     "local-web-server": "^3.0.1",
     "prettier": "^1.18.2",
     "to-do-list-checker": "^4.0.0"
