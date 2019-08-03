@@ -4,6 +4,7 @@
   "description": "jskatas.org site",
   "scripts": {
     "test": "kavun `bash -c 'ls src/**/*spec.js'` --reporter=minimal",
+    "build": "node -r esm -r ./src/server/window.js ./src/server/index.js > dist/ssr-result.html && node -r esm scripts/build.js",
     "build:rss": "mkdir -p dist/rss && babel-node src/rss-feed.js > dist/rss/MostRecent.xml",
     "start": "ws --cors.origin=* --port 9779 --directory src",
     "prerelease": "to-do-list-checker && npm test",
