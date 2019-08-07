@@ -5,7 +5,7 @@
   "scripts": {
     "test": "kavun `bash -c 'ls src/**/*spec.js'` --reporter=minimal",
     "_mkdirs": "mkdir -p dist; mkdir -p tmp; mkdir -p dist/rss",
-    "build": "npm run build:html; npm run build:css; npm run build:js; npm run build:media",
+    "build": "npm run build:html && npm run build:css && npm run build:js && npm run build:media",
     "build:html": "npm run _mkdirs; node -r esm -r ./src/server/window.js ./src/server/index.js > tmp/ssr-result.html && node -r esm scripts/build.js",
     "build:css": "npm run _mkdirs; cp src/style.css dist",
     "build:js": "npm run _mkdirs; cd src; FILES=`ls {,browser/,components/}*.js`; tar -cf - $FILES | tar -C ../dist -xvf -",
