@@ -13,7 +13,7 @@ const Page = ({kataBundles}) =>
         (re-)learn ES6 I wrote katas for ES8, later ES1 (I always got the
         <code>sort()</code> function wrong). At some point I started to learn a
         very expressive assertion library
-        <a href="https://github.com/rluba/hamjest">hamjest</a> by writing katas
+        <a href="https://github.com/rluba/hamjest" rel="noopener">hamjest</a> by writing katas
         for it, and so this page came about.
         <br />
         Enjoy and I hope you have fun learning with it.
@@ -74,7 +74,7 @@ const Kata = ({kata, isNewest}) => {
   if (!isPublished) classNames.push('unpublished');
   return html`
     <div class=${classNames.join(' ')}>
-      <a href=${url} target="_blank">
+      <a href=${url} target="_blank" rel="noopener">
         <kata-name>${name}</kata-name>
       </a>
       ${marker} ${KataDetails({kata})}
@@ -105,7 +105,7 @@ const KataLinks = ({links = []}) => {
         ${links.map(
           link => html`
             <li>
-              <a href=${link.url}>${link.comment}</a>
+              <a href=${link.url} rel="noopener">${link.comment}</a>
             </li>
           `,
         )}
