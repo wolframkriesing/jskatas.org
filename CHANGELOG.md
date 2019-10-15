@@ -11,7 +11,8 @@
 - [ ] add a feedback tool, just like Uku has on plausible        
 - [ ] prepare jskatas.org to provide urls to kata bundles, such as jskatas.org/bundles/es6/language which es6katas.org
       can redirect to
-- [ ] render a blog showing the ADRs (at least), it has author, date, etc. in it (or readable from the repo)      
+- [ ] render a blog showing the ADRs (at least), it has author, date, etc. in it (or readable from the repo)  
+      do also show the ADRs from the katas repo    
 
 # version 3
 - [x] add ADRs for more transparency
