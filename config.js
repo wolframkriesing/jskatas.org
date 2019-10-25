@@ -4,6 +4,7 @@ const katasUrl = KATAS_URL + '/katas';
 
 export const metadataUrls = {
   es1: `${katasUrl}/es1/language/__grouped__.json`,
+  es1LearnByRewriting: `${katasUrl}/es1/learn-by-rewriting/__grouped__.json`,
   es6: `${katasUrl}/es6/language/__grouped__.json`,
   es7: `${katasUrl}/es7/language/__grouped__.json`,
   es8: `${katasUrl}/es8/language/__grouped__.json`,
