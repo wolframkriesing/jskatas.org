@@ -1,4 +1,4 @@
-import {allBundlesConfigs} from '../config.js';
+import {bundleConfigs} from '../config.js';
 
 const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
   fetch(bundleConfig.sourceUrl)
@@ -13,8 +13,7 @@ const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
 
 export const loadAllKatasConstructor = ({fetch}) => async () => {
   const loadBundle = loadKatasForBundle({fetch});
-  const katas = (await Promise.all(allBundlesConfigs.map(bundle => loadBundle(bundle))))
-    .flat()
-  ;
+  const allBundleLoaderFns = bundleConfigs.withEachConfig(bundleConfig => loadBundle(bundleConfig));
+  const katas = (await Promise.all(allBundleLoaderFns)).flat();
   return katas;
 };

@@ -2,6 +2,7 @@ import {KATAS_URL} from './env.js';
 
 const katasUrl = KATAS_URL + '/katas';
 
+// @deprecated
 export const metadataUrls = {
   es1: `${katasUrl}/es1/language/__grouped__.json`,
   es1LearnByRewriting: `${katasUrl}/es1/learn-by-rewriting/__grouped__.json`,
@@ -21,8 +22,6 @@ const bundles = [
   'es10/language',
   'libraries/hamjest',
 ];
-const toAllMetadataUrlEntry = bundleName => ({bundleName, sourceUrl: `${katasUrl}/${bundleName}/__all__.json`});
-export const allBundlesConfigs = bundles.map(toAllMetadataUrlEntry);
 class BundleConfigs {
   static fromBundles(bundles) {
     return new BundleConfigs(bundles);
@@ -37,6 +36,9 @@ class BundleConfigs {
   }
   allSourceUrls() {
     return this._configs.map(config => config.sourceUrl);
+  }
+  withEachConfig(fn) {
+    return this._configs.map(config => fn(config));
   }
 }
 export const bundleConfigs = BundleConfigs.fromBundles(bundles);
