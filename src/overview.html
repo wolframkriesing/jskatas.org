@@ -14,7 +14,9 @@
   <div id="app"></div>
   <script type="module">
     (async () => {
-      window.litHtml = await import('https://unpkg.com/lit-html?module');
+      window.litHtml = navigator.onLine
+        ? await import('https://unpkg.com/lit-html?module')
+        : await import('../node_modules/lit-html/lit-html.js');
       await import('./browser/overview.js');
     })();
   </script>
