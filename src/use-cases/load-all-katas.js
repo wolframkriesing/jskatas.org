@@ -15,10 +15,7 @@ const loadKatasForBundle = (bundleConfig) =>
 ;
 
 export const loadAllKatas = async () => {
-  const configs = allMetadataUrls;
-  const bundles = Object.entries(configs)
-    .map(([bundleName, sourceUrl]) => ({bundleName, sourceUrl}))
-  ;
+  const bundles = allMetadataUrls;
   const katas = [
     ...await loadKatasForBundle(bundles[0]),
     // ...await loadKatasForBundle(bundles[1]),
