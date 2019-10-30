@@ -1,10 +1,7 @@
 import {allMetadataUrls} from '../config.js';
-import {TDDBIN_URL} from "../env.js";
-import fetch from 'isomorphic-fetch';
 
-const loadKatasForBundle = (bundleConfig) =>
+const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
   fetch(bundleConfig.sourceUrl)
-    .then(response => response.json())
     .then(({items: katas}) => katas
       .map(kata => ({
         ...kata,
@@ -14,12 +11,13 @@ const loadKatasForBundle = (bundleConfig) =>
     )
 ;
 
-export const loadAllKatas = async () => {
+export const loadAllKatasConstructor = ({fetch}) => async () => {
   const bundles = allMetadataUrls;
+  const loadBundle = loadKatasForBundle({fetch});
   const katas = [
-    ...await loadKatasForBundle(bundles[0]),
-    // ...await loadKatasForBundle(bundles[1]),
-    // ...await loadKatasForBundle(bundles[2]),
+    ...await loadBundle(bundles[0]),
+    // ...await loadBundle(bundles[1]),
+    // ...await loadBundle(bundles[2]),
   ];
   return katas;
 };
