@@ -22,6 +22,7 @@ export const loadAllKatas = async () => {
   const katas = [
     ...await loadKatasForBundle(bundles[0]),
     // ...await loadKatasForBundle(bundles[1]),
+    // ...await loadKatasForBundle(bundles[2]),
   ];
   return katas;
 };

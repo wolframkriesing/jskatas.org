@@ -1,15 +1,13 @@
 import {render} from '../lit-html.js';
-import {loadViaAjax} from './ajax.js';
-import {Page} from '../components/page.js';
-import {loadKataBundles} from '../pagedata.js';
+import {OverviewPage} from '../components/OverviewPage.js';
+import {loadAllKatas} from '../use-cases/load-all-katas.js';
 
-const renderInBrowser = kataBundles => {
+const renderInBrowser = katas => {
   const targetNode = document.getElementById('app');
-  render(Page({kataBundles}), targetNode);
+  render(OverviewPage({katas}), targetNode);
 };
 
-const loadAllKatas = async () => {
-  const kataBundles = await loadKataBundles({fetch: loadViaAjax});
-  renderInBrowser(kataBundles);
-};
-loadAllKatas();
+(async () => {
+    renderInBrowser(await loadAllKatas());
+  }
+)();
