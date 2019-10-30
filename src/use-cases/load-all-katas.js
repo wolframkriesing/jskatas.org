@@ -12,12 +12,9 @@ const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
 ;
 
 export const loadAllKatasConstructor = ({fetch}) => async () => {
-  const bundles = allBundlesConfigs;
   const loadBundle = loadKatasForBundle({fetch});
-  const katas = [
-    ...await loadBundle(bundles[0]),
-    // ...await loadBundle(bundles[1]),
-    // ...await loadBundle(bundles[2]),
-  ];
+  const katas = (await Promise.all(allBundlesConfigs.map(bundle => loadBundle(bundle))))
+    .flat()
+  ;
   return katas;
 };
