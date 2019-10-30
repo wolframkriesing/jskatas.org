@@ -13,7 +13,6 @@ export const OverviewPage = ({katas}) =>
           <th>Group</th>
           <th>Kata Name</th>
           <th>Level</th>
-          <th>published</th>
           <th>Links</th>
         </tr>
         ${katas.map(kata => KataAsRow({kata}))}
@@ -29,7 +28,6 @@ const KataAsRow = ({kata}) => {
       <td>${kata.groupName}</td>
       <td>${kata.name}</td>
       <td>${kata.level}</td>
-      <td>${kata.publishDateRfc822}</td>
       <td>${kata.tddbinUrl}</td>
     </tr>
   `;

@@ -31,4 +31,11 @@ describe('Load all katas', () => {
     const lastKata = katas[katas.length - 1];
     assert(Reflect.has(lastKata, 'bundleName'));
   });
+  it('each kata contains the `tddbinUrl` (e.g. `#?kata=es6/language/...`)', async () => {
+    const katas = await loadAllKatas();
+
+    const firstKata = katas[0];
+    assert(Reflect.has(firstKata, 'tddbinUrl'));
+    assert(firstKata.tddbinUrl.endsWith('.js'));
+  });
 });

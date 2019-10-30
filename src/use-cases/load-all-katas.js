@@ -1,4 +1,5 @@
 import {bundleConfigs} from '../config.js';
+import {TDDBIN_URL} from '../env.js';
 
 const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
   fetch(bundleConfig.sourceUrl)
@@ -6,7 +7,7 @@ const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
       .map(kata => ({
         ...kata,
         bundleName: bundleConfig.bundleName,
-        // tddbinUrl: TDDBIN_URL + `#?kata=${bundleConfig.bundleName}/`,
+        tddbinUrl: TDDBIN_URL + `#?kata=${bundleConfig.bundleName}/${kata.path}.js`,
       }))
     )
 ;
