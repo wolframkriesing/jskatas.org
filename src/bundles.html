@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learn JavaScript by doing it</title>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description" content="Learn JavaScript by doing it">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" href="./rss/MostRecent.xml" title="Learn JavaScript by doing it" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+  <script src="components/kata-name.js" type="module"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    (async () => {
+      window.litHtml = await import('https://unpkg.com/lit-html?module');
+      await import('./browser/bundles.js');
+    })();
+  </script>
+  <script async defer type="text/javascript" src="https://plausible.io/js/plausible.js"></script>
+</body>
+</html>
