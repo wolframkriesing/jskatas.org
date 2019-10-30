@@ -34,7 +34,7 @@ class BundleConfigs {
     const toAllMetadataUrlEntry = bundleName => ({bundleName, sourceUrl: `${katasUrl}/${bundleName}/__all__.json`});
     this._configs = this._bundles.map(toAllMetadataUrlEntry);
   }
-  withEachConfig(fn) {
+  withEach(fn) {
     return this._configs.map(config => fn(config));
   }
 }

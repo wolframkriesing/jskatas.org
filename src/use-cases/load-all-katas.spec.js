@@ -27,7 +27,7 @@ describe('Load all katas', () => {
 
     await loadAllKatas();
 
-    bundleConfigs.withEachConfig(config =>
+    bundleConfigs.withEach(config =>
       assert(urlsCalled.includes(config.sourceUrl), `Bundle "${config.bundleName}" was not loaded.`)
     );
   });
