@@ -23,5 +23,22 @@ const bundles = [
 ];
 const toAllMetadataUrlEntry = bundleName => ({bundleName, sourceUrl: `${katasUrl}/${bundleName}/__all__.json`});
 export const allBundlesConfigs = bundles.map(toAllMetadataUrlEntry);
+class BundleConfigs {
+  static fromBundles(bundles) {
+    return new BundleConfigs(bundles);
+  }
+  constructor(bundles) {
+    this._bundles = bundles;
+    this._buildConfigs();
+  }
+  _buildConfigs() {
+    const toAllMetadataUrlEntry = bundleName => ({bundleName, sourceUrl: `${katasUrl}/${bundleName}/__all__.json`});
+    this._configs = this._bundles.map(toAllMetadataUrlEntry);
+  }
+  allSourceUrls() {
+    return this._configs.map(config => config.sourceUrl);
+  }
+}
+export const bundleConfigs = BundleConfigs.fromBundles(bundles);
 
 export const FLAT_METADATA_URL = `${katasUrl}/es6/language/__all__.json`;

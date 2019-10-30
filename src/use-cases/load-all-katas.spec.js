@@ -2,7 +2,7 @@ import {describe, it, xit} from 'kavun';
 import assert from 'assert';
 
 import {loadAllKatasConstructor} from './load-all-katas.js';
-import {allBundlesConfigs} from '../config.js';
+import {bundleConfigs} from '../config.js';
 
 import {loadViaAjax} from '../server/ajax.js';
 const loadAllKatas = loadAllKatasConstructor({fetch: loadViaAjax});
@@ -17,7 +17,6 @@ describe('Load all katas', () => {
     assert(Reflect.has(lastKata, 'bundleName'));
   });
   it('loads all configured kata bundles', async () => {
-    const allUrls = allBundlesConfigs.map(conf => conf.sourceUrl);
     let urlsCalled = [];
     const fakeFetch = async (url) => {
       urlsCalled.push(url);
@@ -28,6 +27,7 @@ describe('Load all katas', () => {
 
     await loadAllKatas();
 
+    const allUrls = bundleConfigs.allSourceUrls();
     assert.strictEqual(allUrls.length, urlsCalled.length, 'Expected the number of fetched URLs to be equal to all configured ones.');
     assert.deepStrictEqual(allUrls.sort(), urlsCalled.sort(), 'Not all configured URLs were fetched.');
   });
