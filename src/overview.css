@@ -1,0 +1,39 @@
+table {
+  border-spacing: 0;
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+}
+thead {
+  background: #ddd;
+}
+thead th {
+  text-align: left;
+  padding: 1rem;
+}
+td {
+  border: 1px solid transparent;
+  padding: 1rem;
+  margin: 0;
+}
+table a {
+  background: #EE7F00;
+  padding: 0.5rem;
+  color: white;
+}
+
+
+/* hover */
+tr:hover td {
+  background: #EEE;
+  border-bottom: 1px solid #30544E;
+  border-top: 1px solid #30544E;
+}
+tr:hover td:first-child {
+  border-left: 1px solid #30544E;
+}
+tr:hover td:last-child {
+  border-right: 1px solid #30544E;
+}
+tr:hover a {
+  background: #30544E;
+}

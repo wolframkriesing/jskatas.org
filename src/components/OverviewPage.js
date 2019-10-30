@@ -8,13 +8,13 @@ export const OverviewPage = ({katas}) =>
     <div>
       ${HeaderComponent()}
       <table>
-        <tr>
-          <th>Bundle name</th>
-          <th>Group</th>
-          <th>Kata Name</th>
-          <th>Level</th>
-          <th>Links</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Kata</th>
+            <th></th>
+            <th>Links</th>
+          </tr>
+        </thead>
         ${katas.map(kata => KataAsRow({kata}))}
       </table>
       ${FooterComponent({katasCount: 95})}
@@ -24,10 +24,12 @@ export const OverviewPage = ({katas}) =>
 const KataAsRow = ({kata}) => {
   return html`
     <tr>
-      <td>${kata.bundleName}</td>
-      <td>${kata.groupName}</td>
-      <td>${kata.name}</td>
-      <td>${kata.level}</td>
+      <td>${kata.groupName} - ${kata.name}</td>
+      <td>
+        <button>${kata.bundleName.split('/')[0].toUpperCase()}</button>
+        <button>${kata.level.toLowerCase()}</button>
+        <button>${kata.bundleName.split('/')[1]}</button>
+      </td>
       <td><a href="${kata.tddbinUrl}">open kata</a></td>
     </tr>
   `;
