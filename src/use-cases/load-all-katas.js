@@ -1,4 +1,4 @@
-import {allMetadataUrls} from '../config.js';
+import {allBundlesConfigs} from '../config.js';
 
 const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
   fetch(bundleConfig.sourceUrl)
@@ -12,7 +12,7 @@ const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
 ;
 
 export const loadAllKatasConstructor = ({fetch}) => async () => {
-  const bundles = allMetadataUrls;
+  const bundles = allBundlesConfigs;
   const loadBundle = loadKatasForBundle({fetch});
   const katas = [
     ...await loadBundle(bundles[0]),

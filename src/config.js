@@ -22,6 +22,6 @@ const bundles = [
   'libraries/hamjest',
 ];
 const toAllMetadataUrlEntry = bundleName => ({bundleName, sourceUrl: `${katasUrl}/${bundleName}/__all__.json`});
-export const allMetadataUrls = bundles.map(toAllMetadataUrlEntry);
+export const allBundlesConfigs = bundles.map(toAllMetadataUrlEntry);
 
 export const FLAT_METADATA_URL = `${katasUrl}/es6/language/__all__.json`;
