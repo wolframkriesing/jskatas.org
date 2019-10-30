@@ -27,8 +27,8 @@ describe('Load all katas', () => {
 
     await loadAllKatas();
 
-    const allUrls = bundleConfigs.allSourceUrls();
-    assert.strictEqual(allUrls.length, urlsCalled.length, 'Expected the number of fetched URLs to be equal to all configured ones.');
-    assert.deepStrictEqual(allUrls.sort(), urlsCalled.sort(), 'Not all configured URLs were fetched.');
+    bundleConfigs.withEachConfig(config =>
+      assert(urlsCalled.includes(config.sourceUrl), `Bundle "${config.bundleName}" was not loaded.`)
+    );
   });
 });
