@@ -22,6 +22,14 @@ const bundles = [
   'es10/language',
   'libraries/hamjest',
 ];
+class BundleConfig {
+  static fromBundleName(bundleName) {
+    const inst = new BundleConfig();
+    inst.bundleName = bundleName;
+    inst.sourceUrl = `${katasUrl}/${bundleName}/__all__.json`;
+    return inst;
+  }
+}
 class BundleConfigs {
   static fromBundles(bundles) {
     return new BundleConfigs(bundles);
@@ -31,7 +39,7 @@ class BundleConfigs {
     this._buildConfigs();
   }
   _buildConfigs() {
-    const toAllMetadataUrlEntry = bundleName => ({bundleName, sourceUrl: `${katasUrl}/${bundleName}/__all__.json`});
+    const toAllMetadataUrlEntry = bundleName => BundleConfig.fromBundleName(bundleName);
     this._configs = this._bundles.map(toAllMetadataUrlEntry);
   }
   withEach(fn) {
