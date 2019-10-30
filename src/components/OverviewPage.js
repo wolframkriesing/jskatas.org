@@ -28,7 +28,7 @@ const KataAsRow = ({kata}) => {
       <td>${kata.groupName}</td>
       <td>${kata.name}</td>
       <td>${kata.level}</td>
-      <td>${kata.tddbinUrl}</td>
+      <td><a href="${kata.tddbinUrl}">open kata</a></td>
     </tr>
   `;
 };
