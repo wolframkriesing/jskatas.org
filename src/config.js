@@ -11,4 +11,17 @@ export const metadataUrls = {
   es10: `${katasUrl}/es10/language/__grouped__.json`,
   hamjest: `${katasUrl}/libraries/hamjest/__grouped__.json`,
 };
+
+const bundles = [
+  'es1/language',
+  'es1/learn-by-rewriting',
+  'es6/language',
+  'es7/language',
+  'es8/language',
+  'es10/language',
+  'libraries/hamjest',
+];
+const toAllMetadataUrlEntry = bundleName => ([bundleName, `${katasUrl}/${bundleName}/__all__.json`]);
+export const allMetadataUrls = Object.fromEntries(bundles.map(toAllMetadataUrlEntry));
+
 export const FLAT_METADATA_URL = `${katasUrl}/es6/language/__all__.json`;
