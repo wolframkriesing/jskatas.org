@@ -1,7 +1,7 @@
 table {
   border-spacing: 0;
-  width: calc(100% - 2rem);
-  margin-left: 1rem;
+  width: 95%;
+  margin-left: 2%;
 }
 thead {
   background: #ddd;
@@ -12,13 +12,20 @@ thead th {
 }
 td {
   border: 1px solid transparent;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0;
 }
 table a {
   background: #EE7F00;
   padding: 0.5rem;
   color: white;
+  margin: 0.5rem;
+  white-space: nowrap
+}
+table button {
+  font-size: inherit;
+  background: lightgreen;
+  margin: 0.2rem;
 }
 
 
