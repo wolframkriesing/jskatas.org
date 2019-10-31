@@ -12,20 +12,33 @@ thead th {
 }
 td {
   border: 1px solid transparent;
-  padding: 0.5rem;
+  padding: 0rem;
   margin: 0;
+}
+td:first-child {
+  padding-left: 1rem;
 }
 table a {
   background: #EE7F00;
-  padding: 0.5rem;
+  padding: 0.1rem 1rem;
   color: white;
-  margin: 0.5rem;
+  margin: 0rem;
   white-space: nowrap
 }
 table button {
   font-size: inherit;
-  background: lightgreen;
+  color: white;
   margin: 0.2rem;
+  border: 0;
+}
+table button.main-category {
+  background: darkred;
+}
+table button.sub-category {
+  background: darkgreen;
+}
+table button.level {
+  background: black;
 }
 
 

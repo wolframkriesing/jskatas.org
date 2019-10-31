@@ -22,13 +22,15 @@ export const OverviewPage = ({katas}) =>
   `;
 
 const KataAsRow = ({kata}) => {
+  const kataLevel = kata.level.toLowerCase();
+  const levelButton = kataLevel === 'tbd' ? '' : html`<button class="level">${kataLevel}</button>`;
   return html`
     <tr>
       <td>${kata.groupName} - ${kata.name}</td>
       <td>
-        <button>${kata.bundleName.split('/')[0].toUpperCase()}</button>
-        <button>${kata.level.toLowerCase()}</button>
-        <button>${kata.bundleName.split('/')[1]}</button>
+        <button class="main-category">${kata.bundleName.split('/')[0].toUpperCase()}</button>
+        ${levelButton}
+        <button class="sub-category">${kata.bundleName.split('/')[1]}</button>
       </td>
       <td><a href="${kata.tddbinUrl}">open kata</a></td>
     </tr>
