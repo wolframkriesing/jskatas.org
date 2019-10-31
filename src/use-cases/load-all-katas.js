@@ -16,5 +16,10 @@ export const loadAllKatasConstructor = ({fetch}) => async () => {
   const loadBundle = loadKatasForBundle({fetch});
   const allBundleLoaderFns = bundleConfigs.withEach(bundleConfig => loadBundle(bundleConfig));
   const katas = (await Promise.all(allBundleLoaderFns)).flat();
-  return katas;
+
+  const longname = kata => `${kata.groupName} - ${kata.name}`;
+  return katas
+    .map(kata => ({...kata, longName: longname(kata)}))
+    .sort((kata1, kata2) => kata1.longName.toLowerCase() > kata2.longName.toLowerCase() ? 1 : -1)
+  ;
 };

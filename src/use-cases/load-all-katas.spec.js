@@ -38,4 +38,14 @@ describe('Load all katas', () => {
     assert(Reflect.has(firstKata, 'tddbinUrl'));
     assert(firstKata.tddbinUrl.endsWith('.js'));
   });
+  it('the katas are sorted by "$groupName $name" alphabetically', async () => {
+    const katas = await loadAllKatas();
+
+    assert(katas[0].longName.toLowerCase() < katas[1].longName.toLowerCase());
+
+    katas.map(((_, index) => {
+      if (index > 0) return;
+      assert(katas[index].longName.toLowerCase() < katas[index + 1].longName.toLowerCase());
+    }));
+  });
 });
