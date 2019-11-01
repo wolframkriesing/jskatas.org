@@ -1,4 +1,4 @@
-module.exports = {
+const devConfig = {
   rewrite: [
     // URLs
     { from: "/", "to": "/katas/" },
@@ -10,3 +10,4 @@ module.exports = {
     { from: "/node_modules/(.*)", "to": "/node_modules/$1" },
   ]
 };
+module.exports = process.env.NODE_ENV === 'production' ? {} : devConfig;
