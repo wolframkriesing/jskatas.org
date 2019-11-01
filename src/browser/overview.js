@@ -5,7 +5,21 @@ import {loadViaAjax as fetch} from './ajax.js';
 
 const renderInBrowser = katas => {
   const targetNode = document.getElementById('app');
-  render(OverviewPage({katas}), targetNode);
+
+  const showKataWithDetails = kata => {
+    renderAgain({mixinInputData: {kataWithDetails: kata}});
+  };
+  const hideKataWithDetails = () => {
+    renderAgain();
+  };
+  const actions = {
+    showKataWithDetails,
+    hideKataWithDetails,
+  };
+  const renderAgain = ({mixinInputData = {}} = {}) => {
+    render(OverviewPage({inputData: {katas, ...mixinInputData}, actions}), targetNode);
+  };
+  renderAgain();
 };
 
 const loadAllKatas = loadAllKatasConstructor({fetch});

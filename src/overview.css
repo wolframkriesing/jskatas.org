@@ -1,6 +1,6 @@
 table {
   border-spacing: 0;
-  width: 95%;
+  width: 96%;
   margin-left: 2%;
 }
 thead {
@@ -56,4 +56,22 @@ tr:hover td:last-child {
 }
 tr:hover a {
   background: #30544E;
+}
+
+/* overlay */
+.kata-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 8rem - 2rem);
+  height: calc(100% - 8rem - 2rem);
+  background: white;
+  border: 4rem solid rgba(0,0,0, 0.5);
+  padding: 1rem;
+  overflow: scroll;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.kata-overlay code {
+  white-space: pre;
 }
