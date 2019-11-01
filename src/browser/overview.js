@@ -20,6 +20,10 @@ const renderInBrowser = katas => {
     render(OverviewPage({inputData: {katas, ...mixinInputData}, actions}), targetNode);
   };
   renderAgain();
+
+  document.addEventListener('keyup', evt => {
+    if (evt.key === 'Escape') hideKataWithDetails();
+  });
 };
 
 const loadAllKatas = loadAllKatasConstructor({fetch});
