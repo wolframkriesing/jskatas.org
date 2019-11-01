@@ -16,10 +16,16 @@
 
 # version 3
 - [x] add ADRs for more transparency
-- [ ] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
+- [x] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
   - [x] make it render client-side
   - [ ] make the .env work again
-  - [x] make server-side rendering work again! 
+  - [x] make server-side rendering work again!
+- [ ] add table view of katas
+  - [ ] show kata details onclick in modal (think of accessibility, etc.)
+  - [ ] allow filtering
+  - [ ] make URLs load filtered page
+  - [ ] add "social" intent for tweeting about a filtered page
+- [ ] daily hint, generated from the katas we have, tweets like "Did you know, Arrays.indexOf can ... #javascript #didYouKnow by @jskatas"
 
 # version 2
 - [x] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas - DONE
