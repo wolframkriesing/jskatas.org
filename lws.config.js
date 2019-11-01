@@ -6,6 +6,7 @@ module.exports = {
 
     // assets
     { from: "/katas/overview/(.*)", "to": "/src/$1" },
-    { from: "/katas/node_modules/(.*)", "to": "/node_modules/$1" },
+    { from: "/katas/bundles/(.*)", "to": "/src/$1" },
+    { from: "/node_modules/(.*)", "to": "/node_modules/$1" },
   ]
 };
