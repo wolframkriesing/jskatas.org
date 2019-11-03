@@ -25,8 +25,8 @@ That's how this repo came about.
 
 ## Technology
 
-This site uses [preact.js] for abstracting away the DOM (as I like to call it).
-On top it also uses preact.js for server-side rendering, which creates a static version
+This site uses [lit-html] for abstracting away the DOM (as I like to call it).
+On top it also uses lit-html for server-side rendering, which creates a static version
 of the page that loads in an instant and the client-side waiting times are minimal.
 
 [1]: https://twitter.com/tddbin/status/576305472128446466
@@ -35,4 +35,4 @@ of the page that loads in an instant and the client-side waiting times are minim
 [babeljs]: https://babeljs.io
 [ES6Katas.org]: https://ES6Katas.org
 [@basecode]: https://twitter.com/basecode
-[preact.js]: https://preactjs.com
+[lit-html]: https://lit-html.polymer-project.org/
