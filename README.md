@@ -29,6 +29,14 @@ This site uses [lit-html] for abstracting away the DOM (as I like to call it).
 On top it also uses lit-html for server-side rendering, which creates a static version
 of the page that loads in an instant and the client-side waiting times are minimal.
 
+## Develop
+
+Since nobody has nodejs installed globally anymore, this project doesn't either.
+Node is installed via docker and in order to start the project for development
+run the following command
+- `./run.sh "npm start"` to start the server at port http://localhost:9779
+- to run the tests do `./run.sh "npm test"`
+
 [1]: https://twitter.com/tddbin/status/576305472128446466
 [2]: https://github.com/tddbin/katas
 [tddbin]: https://tddbin.com
