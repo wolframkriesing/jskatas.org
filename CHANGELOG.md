@@ -26,6 +26,7 @@
   - [ ] allow filtering
   - [ ] make URLs load filtered page
   - [ ] add "social" intent for tweeting about a filtered page
+  - [ ] add a page /kata/es6/language/array-api/fill for each kata, which is linked from the overview and used for SEO
 - [ ] daily hint, generated from the katas we have, tweets like "Did you know, Arrays.indexOf can ... #javascript #didYouKnow by @jskatas"
 - [ ] the local server URL rewrites disable the editing in the browser :(, fix it
 
