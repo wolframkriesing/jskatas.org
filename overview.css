@@ -1,0 +1,78 @@
+table {
+  border-spacing: 0;
+  width: 96%;
+  margin-left: 2%;
+}
+thead {
+  background: #ddd;
+}
+thead th {
+  text-align: left;
+  padding: 1rem;
+}
+td {
+  border: 1px solid transparent;
+  padding: 0rem;
+  margin: 0;
+}
+td:first-child {
+  padding-left: 1rem;
+}
+table a {
+  padding: 0.1rem 1rem;
+  margin: 0rem;
+  white-space: nowrap;
+}
+table button {
+  font-size: inherit;
+  color: white;
+  margin: 0.2rem;
+  border: 0;
+}
+table button.main-category {
+  background: darkred;
+}
+table button.sub-category {
+  background: darkgreen;
+}
+table button.level {
+  background: black;
+}
+
+
+/* hover */
+tr:hover td {
+  background: #EEE;
+  border-bottom: 1px solid #30544E;
+  border-top: 1px solid #30544E;
+}
+tr:hover td:first-child {
+  border-left: 1px solid #30544E;
+}
+tr:hover td:last-child {
+  border-right: 1px solid #30544E;
+}
+tr:hover a {
+  background: #30544E;
+  color: white;
+}
+
+/* overlay */
+.kata-overlay {
+  --margin: 4rem;
+  --padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - var(--margin) - var(--margin) - var(--padding) - var(--padding));
+  height: calc(100% - var(--margin) - var(--margin) - var(--padding) - var(--padding));
+  background: white;
+  border: var(--margin) solid rgba(0,0,0, 0.5);
+  padding: var(--padding);
+  overflow: scroll;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.kata-overlay code {
+  white-space: pre;
+}
