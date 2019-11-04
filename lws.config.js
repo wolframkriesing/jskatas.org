@@ -3,6 +3,7 @@ const devConfig = {
     // URLs
     { from: "/", "to": "/katas/" },
     { from: "/katas/(.*)/", "to": "/src/$1.html" },
+    { from: "/katas/(.*)/?(.*)", "to": "/src/$1.html?$2" },
 
     // assets
     { from: "/katas/overview/(.*)", "to": "/src/$1" },
