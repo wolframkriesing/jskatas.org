@@ -1,5 +1,6 @@
 import {describe, it, xit} from 'kavun';
 import assert from 'assert';
+import {assertThat, endsWith, not} from 'hamjest';
 
 import {loadAllKatasConstructor} from './load-all-katas.js';
 import {bundleConfigs} from '../config.js';
@@ -36,7 +37,7 @@ describe('Load all katas', () => {
 
     const firstKata = katas[0];
     assert(Reflect.has(firstKata, 'tddbinUrl'));
-    assert(firstKata.tddbinUrl.endsWith('.js'));
+    assertThat(firstKata.tddbinUrl, not(endsWith('.js')));
   });
   it('the katas are sorted by "$groupName $name" alphabetically', async () => {
     const katas = await loadAllKatas();

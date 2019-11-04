@@ -7,7 +7,7 @@ const loadKatasForBundle = ({fetch}) => (bundleConfig) =>
       .map(kata => ({
         ...kata,
         bundleName: bundleConfig.bundleName,
-        tddbinUrl: TDDBIN_URL + `#?kata=${bundleConfig.bundleName}/${kata.path}.js`,
+        tddbinUrl: TDDBIN_URL + `#?kata=${bundleConfig.bundleName}/${kata.path}`,
       }))
     )
 ;
