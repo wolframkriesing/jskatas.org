@@ -1,6 +1,6 @@
 import {describe, it, xit} from 'kavun';
 import assert from 'assert';
-import {assertThat, endsWith, not, hasProperty, contains} from 'hamjest';
+import {assertThat, endsWith, not, hasProperty, hasItem} from 'hamjest';
 
 import {loadAllKatasConstructor} from './load-all-katas.js';
 import {bundleConfigs} from '../config.js';
@@ -21,7 +21,7 @@ describe('Load all katas', () => {
     await loadAllKatas();
 
     bundleConfigs.withEach(config =>
-      assert(urlsCalled.includes(config.sourceUrl), `Bundle "${config.bundleName}" was not loaded.`)
+      assertThat(urlsCalled, hasItem(config.sourceUrl))
     );
   });
   it('a kata contains the `bundleName` (e.g. `es6/language`)', async () => {
