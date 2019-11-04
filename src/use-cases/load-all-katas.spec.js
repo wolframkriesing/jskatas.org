@@ -1,6 +1,6 @@
 import {describe, it, xit} from 'kavun';
 import assert from 'assert';
-import {assertThat, endsWith, not} from 'hamjest';
+import {assertThat, endsWith, not, hasProperty, contains} from 'hamjest';
 
 import {loadAllKatasConstructor} from './load-all-katas.js';
 import {bundleConfigs} from '../config.js';
@@ -28,15 +28,15 @@ describe('Load all katas', () => {
     const katas = await loadAllKatas();
 
     const firstKata = katas[0];
-    assert(Reflect.has(firstKata, 'bundleName'));
+    assertThat(firstKata, hasProperty('bundleName'));
     const lastKata = katas[katas.length - 1];
-    assert(Reflect.has(lastKata, 'bundleName'));
+    assertThat(lastKata, hasProperty('bundleName'));
   });
   it('each kata contains the `tddbinUrl` (e.g. `#?kata=es6/language/...`)', async () => {
     const katas = await loadAllKatas();
 
     const firstKata = katas[0];
-    assert(Reflect.has(firstKata, 'tddbinUrl'));
+    assertThat(firstKata, hasProperty('tddbinUrl'));
     assertThat(firstKata.tddbinUrl, not(endsWith('.js')));
   });
   it('the katas are sorted by "$groupName $name" alphabetically', async () => {
