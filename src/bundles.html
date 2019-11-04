@@ -15,7 +15,7 @@
   <div id="app"></div>
   <script type="module">
     (async () => {
-      (await import('./browser/lit-html.js')).loadLitHtml();
+      await (await import('./browser/lit-html.js')).loadLitHtml();
       await import('./browser/bundles.js');
     })();
   </script>
