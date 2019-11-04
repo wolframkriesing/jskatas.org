@@ -13,7 +13,10 @@ if (runsInBrowser) {
 
   html = (s, ...values) => {
     const renderValue = value =>
-      Array.isArray(value) ? value.join('') : value;
+      typeof value === 'function' 
+          ? '' 
+          : Array.isArray(value) ? value.join('') : value
+    ;
     const value = i => (i < values.length ? renderValue(values[i]) : '');
     return s.map((s, i) => s + value(i)).join('');
   };
