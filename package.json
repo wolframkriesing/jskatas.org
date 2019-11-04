@@ -52,6 +52,7 @@
     "to-do-list-checker": "^4.0.0"
   },
   "dependencies": {
+    "hamjest": "^3.2.5",
     "isomorphic-fetch": "^2.2.1"
   }
 }
