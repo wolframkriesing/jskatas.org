@@ -21,11 +21,13 @@
   - [ ] make the .env work again
   - [x] make server-side rendering work again!
 - [ ] add table view of katas
-  - [ ] show kata details onclick in modal (think of accessibility, etc.)
+  - [x] show kata details onclick in modal 
+    - [ ] think of accessibility, etc.
   - [ ] allow filtering
   - [ ] make URLs load filtered page
   - [ ] add "social" intent for tweeting about a filtered page
 - [ ] daily hint, generated from the katas we have, tweets like "Did you know, Arrays.indexOf can ... #javascript #didYouKnow by @jskatas"
+- [ ] the local server URL rewrites disable the editing in the browser :(, fix it
 
 # version 2
 - [x] ~~redirect to es6katas to jskatas.org/bundles/es6~~ must be done on es6katas - DONE
