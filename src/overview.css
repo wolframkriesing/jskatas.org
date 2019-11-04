@@ -19,11 +19,9 @@ td:first-child {
   padding-left: 1rem;
 }
 table a {
-  background: #EE7F00;
   padding: 0.1rem 1rem;
-  color: white;
   margin: 0rem;
-  white-space: nowrap
+  white-space: nowrap;
 }
 table button {
   font-size: inherit;
@@ -56,6 +54,7 @@ tr:hover td:last-child {
 }
 tr:hover a {
   background: #30544E;
+  color: white;
 }
 
 /* overlay */
