@@ -7,19 +7,6 @@ const Page = ({kataBundles}) =>
   html`
     <div>
       ${HeaderComponent()}
-      <p style="padding: 1rem">
-        I learned ES6 by writing it and failing. Out of this the es6katas
-        evolved. And since, this allowed me to always again go back and
-        (re-)learn ES6 I wrote katas for ES8, later ES1 (I always got the
-        <code>sort()</code> function wrong). At some point I started to learn a
-        very expressive assertion library
-        <a href="https://github.com/rluba/hamjest" rel="noopener">hamjest</a> by writing katas
-        for it, and so this page came about.
-        <br />
-        Enjoy and I hope you have fun learning with it.
-        <br />
-        Wolfram Kriesing
-      </p>
       ${kataBundles.map(kataBundle => KataBundle({bundle: kataBundle}))}
       ${FooterComponent({katasCount: 95})}
     </div>
