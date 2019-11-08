@@ -1,6 +1,7 @@
 const devConfig = {
   rewrite: [
     // URLs
+    { from: "/", "to": "/sites/index.html" },
     { from: "/katas/(.*)", "to": "/sites/katas/$1" },
   ]
 };

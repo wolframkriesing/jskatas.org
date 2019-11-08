@@ -1,0 +1,20 @@
+portal {
+  transform: scale(0.3);
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 2rem 2rem grey;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-reveal {
+    transition: transform 0.001s;
+  }
+}
+
+.portal-reveal {
+  transition: transform 1s;
+  transform: scale(1.0);
+}
