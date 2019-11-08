@@ -3,7 +3,7 @@ import {html, nothing} from '../lit-html.js';
 import {HeaderComponent} from './header.js';
 import {FooterComponent} from './footer.js';
 
-export const Home = ({inputData: {showBundles}, actions}) => {
+export const HomePage = ({inputData: {showBundles}, actions}) => {
   // const activatePortal = p => {
   //     p.target.activate();
   // };

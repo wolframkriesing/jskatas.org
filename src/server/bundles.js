@@ -1,8 +1,8 @@
 import {loadViaAjax} from './ajax.js';
-import {Page} from '../components/page.js';
+import {BundlesPage} from '../components/page.js';
 import {loadKataBundles} from '../pagedata.js';
 
-const render = kataBundles => Page({kataBundles});
+const render = kataBundles => BundlesPage({kataBundles});
 
 const loadAllKatas = async () => {
   const kataBundles = await loadKataBundles({fetch: loadViaAjax});

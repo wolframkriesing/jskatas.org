@@ -3,7 +3,7 @@ import {html, nothing} from '../lit-html.js';
 import {HeaderComponent} from './header.js';
 import {FooterComponent} from './footer.js';
 
-const Page = ({kataBundles}) =>
+const BundlesPage = ({kataBundles}) =>
   html`
     <div>
       ${HeaderComponent()}
@@ -101,4 +101,4 @@ const KataLinks = ({links = []}) => {
   `;
 };
 
-export {Page};
+export {BundlesPage};
