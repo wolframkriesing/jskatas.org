@@ -4,16 +4,18 @@ import {HeaderComponent} from './header.js';
 import {FooterComponent} from './footer.js';
 
 export const HomePage = ({inputData: {showBundles}, actions}) => {
-  // const activatePortal = p => {
-  //     p.target.activate();
-  // };
-  const onBundlesClick = evt => {
-    if ('HTMLPortalElement' in window) {
-        evt.preventDefault();
-        actions.onBundlesClick();
-    }
-  };
-  return html`
+    const onBundlesClick = evt => {
+        if ('HTMLPortalElement' in window) {
+            evt.preventDefault();
+            actions.onBundlesClick();
+        }
+    };
+
+    const urls = {
+        katasBundles: '/katas/bundles/',
+        katasOverview: '/katas/overview/',
+    };
+    return html`
     <div>
       ${HeaderComponent()}
       <p style="padding: 1rem">
@@ -30,31 +32,43 @@ export const HomePage = ({inputData: {showBundles}, actions}) => {
         Wolfram Kriesing
       </p>
       
-      <a href="/katas/bundles/" @click=${onBundlesClick}>kata by bundles</a>
-      <a href="/katas/overview/">overview</a>
-      ${showBundles ? Portal() : nothing}
+      ${PortalOrFallback({
+        url: urls.katasBundles,
+        fallback: html`<a href=${urls.katasBundles}>kata by bundles</a>`
+      })}
+      ${PortalOrFallback({
+        url: urls.katasOverview,
+        fallback: html`<a href=${urls.katasOverview}>katas overview</a>`
+      })}
       
       ${FooterComponent({katasCount: 95})}
     </div>
   `
 };
 
-const Portal = () => {
-    return html `
+const PortalOrFallback = ({url, fallback}) => {
+    const isPortalSupported = 'HTMLPortalElement' in window;
+    return isPortalSupported
+        ? Portal({url})
+        : fallback
+        ;
+};
+const Portal = ({url}) => {
+    return html`
       <portal 
-        src="/katas/bundles/" 
+        src=${url} 
         @load=${evt => {
-                // const portal = evt.target;
-                // portal.classList.add('portal-reveal');
-                // portal.addEventListener('transitionend', evt => {
-                //     if (evt.propertyName === 'transform') {
-                //         portal.activate();
-                //     }
-                // });
-            }
-        }
+        // const portal = evt.target;
+        // portal.classList.add('portal-reveal');
+        // portal.addEventListener('transitionend', evt => {
+        //     if (evt.propertyName === 'transform') {
+        //         portal.activate();
+        //     }
+        // });
+    }
+    }
       />
-    `;    
+    `;
 };
 /*
       <portal src="/katas/bundles/" @click=${activatePortal}"

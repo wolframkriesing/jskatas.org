@@ -1,11 +1,12 @@
 portal {
-  transform: scale(0.3);
-  transform-origin: top left;
+  flex: 1;
+  flex-wrap: wrap;
+  transform: scale(0.4) translate(-70%, -70%);
+  transform-style: unset;
+  /* transform-origin: top left; */
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  box-shadow: 0 0 2rem 2rem grey;
+  box-shadow: 0 0 1rem 1rem lightgrey;
 }
 
 @media (prefers-reduced-motion: reduce) {
