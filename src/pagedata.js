@@ -16,6 +16,7 @@ export const loadKataBundles = async ({fetch}) => {
   const kataBundles = [];
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'es1',
       name: 'ECMAScript 1',
       metadata: bundlesMetadata[0],
       url: TDDBIN_URL + '#?kata=es1/language/',
@@ -23,6 +24,7 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'es1rewrite',
       name: 'ECMAScript 1 - Learn by rewriting',
       metadata: bundlesMetadata[1],
       url: TDDBIN_URL + '#?kata=es1/learn-by-rewriting/',
@@ -30,6 +32,7 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'es6',
       name: 'ECMAScript 6',
       metadata: bundlesMetadata[2],
       url: TDDBIN_URL + '#?kata=es6/language/',
@@ -37,6 +40,7 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'es7',
       name: 'ECMAScript 7',
       metadata: bundlesMetadata[3],
       url: TDDBIN_URL + '#?kata=es7/language/',
@@ -44,6 +48,7 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'es8',
       name: 'ECMAScript 8',
       metadata: bundlesMetadata[4],
       url: TDDBIN_URL + '#?kata=es8/language/',
@@ -51,6 +56,7 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'es10',
       name: 'ECMAScript 10',
       metadata: bundlesMetadata[5],
       url: TDDBIN_URL + '#?kata=es10/language/',
@@ -58,6 +64,7 @@ export const loadKataBundles = async ({fetch}) => {
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
+      anchor: 'hamjest',
       name: 'Assertion Library Hamjest',
       metadata: bundlesMetadata[6],
       url: TDDBIN_URL + '#?kata=libraries/hamjest/',

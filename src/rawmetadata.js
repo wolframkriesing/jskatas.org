@@ -12,9 +12,10 @@ const fromMetadataJsonToKataBundle = (groupedMetadataJson, url) => {
 };
 
 export default class RawMetadata {
-  static toKataBundle({name, metadata, url}) {
+  static toKataBundle({name, anchor, metadata, url}) {
     return KataBundle.withGroups(
       name,
+      anchor,
       fromMetadataJsonToKataBundle(metadata, url),
     );
   }

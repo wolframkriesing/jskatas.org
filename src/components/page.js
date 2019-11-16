@@ -27,7 +27,7 @@ const Page = ({kataBundles}) =>
 const KataBundle = ({bundle}) =>
   html`
     <div>
-      <h2>${bundle.name}</h2>
+      <a href="#${bundle.anchor}" name="${bundle.anchor}"><h2>${bundle.name}</h2></a>
       ${bundle
         .allGroups()
         .map(group =>

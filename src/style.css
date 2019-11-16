@@ -4,7 +4,8 @@ body {
   margin: 0;
 }
 
-a h1 {
+a h1,
+a h2 {
   color: white;
 }
 a {

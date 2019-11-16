@@ -17,8 +17,12 @@ class Kata {
 
 describe('KataBundle', () => {
   it('must provide the `name` as property', () => {
-    const bundle = KataBundle.withGroups('ES11', {});
+    const bundle = KataBundle.withGroups('ES11', '', {});
     assert.strictEqual(bundle.name, 'ES11');
+  });
+  it('must provide the `anchor` as property', () => {
+    const bundle = KataBundle.withGroups('', 'es11', {});
+    assert.strictEqual(bundle.anchor, 'es11');
   });
 });
 describe('sort kata groups', () => {

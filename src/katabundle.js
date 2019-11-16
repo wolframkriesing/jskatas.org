@@ -12,9 +12,10 @@ export default class KataBundle {
     return this.allGroups().length;
   }
 
-  static withGroups(name, rawGroups) {
+  static withGroups(name, anchor, rawGroups) {
     const bundle = new KataBundle();
     bundle.name = name;
+    bundle.anchor = anchor;
     bundle.initializePropertiesFromRawObject(rawGroups);
     bundle.sortByNumberOfLinks();
     bundle.moveGroupWithNewestKataToBeginning();
