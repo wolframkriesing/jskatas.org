@@ -2,8 +2,8 @@ import {describe, it} from 'kavun';
 import assert from 'assert';
 import RawMetadata from '../rawmetadata.js';
 
-const toKataBundle = (name, metadataJson) => {
-  return RawMetadata.toKataBundle(name, metadataJson);
+const toKataBundle = (rawData) => {
+  return RawMetadata.toKataBundle(rawData);
 };
 
 class Kata {
