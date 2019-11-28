@@ -20,9 +20,9 @@ describe('KataBundle', () => {
     const bundle = KataBundle.withGroups('ES11', '', {});
     assert.strictEqual(bundle.name, 'ES11');
   });
-  it('must provide the `anchor` as property', () => {
-    const bundle = KataBundle.withGroups('', 'es11', {});
-    assert.strictEqual(bundle.anchor, 'es11');
+  it('must provide the `nameSlug` as property', () => {
+    const bundle = KataBundle.withGroups('', {nameSlug: 'es11'});
+    assert.strictEqual(bundle.nameSlug, 'es11');
   });
 });
 describe('sort kata groups', () => {
