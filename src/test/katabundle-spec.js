@@ -46,13 +46,13 @@ describe('sort kata groups', () => {
   kataBundle.moveGroupWithNewestKataToBeginning();
   const allKataGroups = () => kataBundle.allGroups();
   it('first is the one with the newest kata inside', () => {
-    assert.equal(allKataGroups()[0].name, 'group with newest kata');
+    assert.strictEqual(allKataGroups()[0].name, 'group with newest kata');
   });
   it('second is the one with most katas', () => {
-    assert.equal(allKataGroups()[1].name, 'group with 2 katas');
+    assert.strictEqual(allKataGroups()[1].name, 'group with 2 katas');
   });
   it('third is the one with less katas', () => {
-    assert.equal(allKataGroups()[2].name, 'group with 1 kata');
+    assert.strictEqual(allKataGroups()[2].name, 'group with 1 kata');
   });
 
   it('by name when number of files is the same', () => {
@@ -66,7 +66,7 @@ describe('sort kata groups', () => {
     kataBundle.sortByNumberOfLinks();
     kataBundle.moveGroupWithNewestKataToBeginning();
 
-    assert.equal(kataBundle.allGroups()[0].name, 'group a');
+    assert.strictEqual(kataBundle.allGroups()[0].name, 'group a');
   });
 });
 
@@ -82,6 +82,6 @@ describe('find newest kata', () => {
         Kata.withId(13),
       ]),
     );
-    assert.equal(kataBundle.isNewestKata(Kata.withId(13)), true);
+    assert.strictEqual(kataBundle.isNewestKata(Kata.withId(13)), true);
   });
 });
