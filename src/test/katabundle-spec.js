@@ -17,12 +17,18 @@ class Kata {
 
 describe('KataBundle', () => {
   it('must provide the `name` as property', () => {
-    const bundle = KataBundle.withGroups('ES11', '', {});
+    const bundle = KataBundle.withGroups({name: 'ES11', groups: []});
     assert.strictEqual(bundle.name, 'ES11');
   });
   it('must provide the `nameSlug` as property', () => {
-    const bundle = KataBundle.withGroups('', {nameSlug: 'es11'});
+    const bundle = KataBundle.withGroups({nameSlug: 'es11', groups: []});
     assert.strictEqual(bundle.nameSlug, 'es11');
+  });
+  it('must provide the kata groups given', () => {
+    const kataGroup = KataGroup.fromRawKataItems('kata group', [{id: 1}]);
+    const bundle = KataBundle.withGroups({nameSlug: 'es11', groups: [kataGroup]});
+    assert.strictEqual(bundle.groups.length, 1);
+    assert.strictEqual(bundle.groups[0].name, 'kata group');
   });
 });
 describe('sort kata groups', () => {
