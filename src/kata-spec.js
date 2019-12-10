@@ -16,13 +16,13 @@ describe('kata', () => {
   describe('AND some calculated values', () => {
     it('a missing `publishDateUTC` sets `isPublished=false`', () => {
       const kata = Kata.fromRawItem({});
-      assert.equal(kata.isPublished, false);
+      assert.strictEqual(kata.isPublished, false);
     });
     it('an existing `publishDateUTC` sets `isPublished=true`', () => {
       const kata = Kata.fromRawItem({
         publishDateUTC: '2015-03-13T07:55:00.000Z',
       });
-      assert.equal(kata.isPublished, true);
+      assert.strictEqual(kata.isPublished, true);
     });
   });
 });

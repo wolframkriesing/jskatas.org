@@ -8,13 +8,13 @@ describe('kata group', () => {
     const name = 'name';
     const group = KataGroup.fromRawKataItems(name, []);
 
-    assert.equal(group.name, name);
+    assert.strictEqual(group.name, name);
   });
   it('provides the `katas`', () => {
     const rawKataItems = [];
     const group = KataGroup.fromRawKataItems('', rawKataItems);
 
-    assert.deepEqual(group.katas, rawKataItems);
+    assert.deepStrictEqual(group.katas, rawKataItems);
   });
 
   describe('sort the katas by id, so the difficulty goes up', () => {
@@ -34,7 +34,7 @@ describe('kata group', () => {
       const katas = [Kata.fromRawItem({id: 1})];
       const group = KataGroup.fromRawKataItems('', katas);
 
-      assert.equal(group.highestId, 1);
+      assert.strictEqual(group.highestId, 1);
     });
 
     it('for multiple katas return the highest', () => {
@@ -45,7 +45,7 @@ describe('kata group', () => {
       ];
       const group = KataGroup.fromRawKataItems('', katas);
 
-      assert.equal(group.highestId, 11);
+      assert.strictEqual(group.highestId, 11);
     });
   });
 });
