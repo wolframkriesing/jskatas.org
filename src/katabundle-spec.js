@@ -1,7 +1,7 @@
 import {describe, it} from 'kavun';
 import assert from 'assert';
-import KataBundle from '../katabundle.js';
-import KataGroup from '../katagroup';
+import KataBundle from './katabundle.js';
+import KataGroup from './katagroup';
 
 class Kata {
   static withId(id) {

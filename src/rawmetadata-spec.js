@@ -1,6 +1,6 @@
 import {describe, it} from 'kavun';
 import assert from 'assert';
-import RawMetadata from '../rawmetadata.js';
+import RawMetadata from './rawmetadata.js';
 
 class Kata {
   static withId(id) {

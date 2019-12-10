@@ -1,6 +1,6 @@
 import {describe, it} from 'kavun';
 import assert from 'assert';
-import Kata from '../kata.js';
+import Kata from './kata.js';
 
 describe('kata', () => {
   describe('provides all values passed to it as properties', () => {
