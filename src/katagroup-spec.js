@@ -17,13 +17,6 @@ describe('kata group', () => {
     assert.deepEqual(group.katas, rawKataItems);
   });
 
-  it('each kata is a Kata instance', () => {
-    const rawKataItems = [{}];
-    const group = KataGroup.fromRawKataItems('', rawKataItems);
-
-    assert.deepEqual(group.katas[0] instanceof Kata, true);
-  });
-
   describe('sort the katas by id, so the difficulty goes up', () => {
     const katas = [
       Kata.fromRawItem({id: '11'}),
