@@ -15,6 +15,7 @@
       do also show the ADRs from the katas repo    
 
 # version 3
+- [x] Made bundles linkable on the site
 - [x] add ADRs for more transparency
 - [x] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
   - [x] make it render client-side
