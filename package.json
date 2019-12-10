@@ -45,6 +45,7 @@
   "devDependencies": {
     "dotenv": "^8.0.0",
     "esm": "^3.2.25",
+    "hamjest": "^3.2.5",
     "kavun": "^3.0.0",
     "lit-html": "^1.1.2",
     "local-web-server": "^3.0.1",
