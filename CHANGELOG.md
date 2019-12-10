@@ -19,7 +19,7 @@
 - [x] add ADRs for more transparency
 - [x] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
   - [x] make it render client-side
-  - [ ] make the .env work again
+  - [ ] ~~make the .env work again~~ remove .env use real ENV vars only
   - [x] make server-side rendering work again!
 - [ ] add table view of katas
   - [x] show kata details onclick in modal 
