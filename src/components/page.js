@@ -24,27 +24,29 @@ const Page = ({kataBundles}) =>
       ${FooterComponent({katasCount: 95})}
     </div>
   `;
-const KataBundle = ({bundle}) =>
-  html`
+const KataBundle = ({bundle}) => {
+  const anchorName = `bundle-${bundle.nameSlug}`;
+  return html`
     <div>
-      <a href="#${bundle.anchor}" name="${bundle.anchor}"><h2>${bundle.name}</h2></a>
+      <a href="#${anchorName}" title="${bundle.name}" id="${anchorName}"><h2>${bundle.name}</h2></a>
       ${bundle
-        .allGroups()
-        .map(group =>
-          KataGroup({
-            group,
-            isNewestKataCheck: bundle.isNewestKata.bind(bundle),
-          }),
-        )}
+    .allGroups()
+    .map(group =>
+      KataGroup({
+        group,
+        isNewestKataCheck: bundle.isNewestKata.bind(bundle),
+      }),
+    )}
     </div>
-  `;
+  `
+};
 const KataGroup = ({group, isNewestKataCheck}) =>
   html`
     <div class="group">
       <h3>${group.name}</h3>
       ${group.katas.map(kata =>
-        Kata({kata, isNewest: isNewestKataCheck(kata)}),
-      )}
+    Kata({kata, isNewest: isNewestKataCheck(kata)}),
+  )}
     </div>
   `;
 const Kata = ({kata, isNewest}) => {
@@ -71,7 +73,9 @@ const Kata = ({kata, isNewest}) => {
     ],
   ]).get(true);
   const classNames = ['kata'];
-  if (!isPublished) classNames.push('unpublished');
+  if (!isPublished) {
+    classNames.push('unpublished');
+  }
   return html`
     <div class=${classNames.join(' ')}>
       <a href=${url} target="_blank" rel="noopener">
@@ -103,12 +107,12 @@ const KataLinks = ({links = []}) => {
       <h3>Links for futher reading</h3>
       <ul>
         ${links.map(
-          link => html`
+    link => html`
             <li>
               <a href=${link.url} rel="noopener">${link.comment}</a>
             </li>
           `,
-        )}
+  )}
       </ul>
     </section>
   `;
