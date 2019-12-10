@@ -1,16 +1,18 @@
 import {describe, it} from 'kavun';
 import assert from 'assert';
+import {assertThat, instanceOf} from 'hamjest';
 import RawMetadata from './rawmetadata.js';
+import Kata from './kata.js';
 
-class Kata {
+class RawKata {
   static withId(id) {
     return {id, path: 'path'};
   }
 }
 
 describe('Create KataBundle', () => {
-  const group = {items: [Kata.withId(1)]};
-  const anotherGroup = {items: [Kata.withId(2)]};
+  const group = {items: [RawKata.withId(1)]};
+  const anotherGroup = {items: [RawKata.withId(2)]};
 
   it('for one group only one KataGroup is created', () => {
     const groupedMetadataJson = {
@@ -42,5 +44,16 @@ describe('Create KataBundle', () => {
       url: '',
     });
     assert.strictEqual(kataGroups.length, 2);
+  });
+  it('creates `Kata` instances from the raw data', () => {
+    const bundle = RawMetadata.toKataBundle({
+      metadata: {
+        name: 'ES6 Stuff',
+        nameSlug: 'es6-stuff',
+        groups: {'group name': group},
+      },
+      url: 'http://URL',
+    });
+    assertThat(bundle.groups[0].katas[0], instanceOf(Kata));
   });
 });
