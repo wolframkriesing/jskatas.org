@@ -29,6 +29,6 @@ else
     --name ${CONTAINER_NAME} \
     --publish 9779:9779 \
     --volume $(pwd):/app \
-    ${IMAGE_NAME} $1
+    ${IMAGE_NAME} $@
 fi
 
