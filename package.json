@@ -17,7 +17,9 @@
     "start:dist": "NODE_ENV=production ws --cors.origin=* --port 9779 --directory dist",
     "prerelease": "to-do-list-checker && npm test",
     "release": "to-do-list-checker && npm version major",
-    "format-code": "prettier . --write \"{src,scripts}/**/*.js\""
+    "format-code": "prettier . --write \"{src,scripts}/**/*.js\"",
+    "typecheck": "tsc",
+    "dev:typecheck": "npm run typecheck -- --watch"
   },
   "repository": {
     "type": "git",

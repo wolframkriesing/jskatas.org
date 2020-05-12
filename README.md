@@ -36,6 +36,8 @@ Node is installed via docker and in order to start the project for development
 run the following command
 - `./run.sh "npm start"` to start the server at port http://localhost:9779
 - to run the tests do `./run.sh "npm test"`
+- `./run.sh npm run typecheck` to verify that all types (that are checked) are correct
+- `./run.sh npm run dev:typecheck` to have it run in watch mode, very suitable for development
 
 [1]: https://twitter.com/tddbin/status/576305472128446466
 [2]: https://github.com/tddbin/katas
