@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "checkJs": true,
     "noEmit": true
   },
   "include": ["src/*.js"]
