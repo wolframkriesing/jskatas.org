@@ -12,7 +12,12 @@ const FooterComponent = ({katasCount}) => {
           </a>
         </li>
         <li>
-          <a href="/imprint"> <i class="fa fa-paragraph"></i>imprint </a>
+          <a href="https://picostitch.com">
+            I am blogging at picostitch.com
+          </a>
+        </li>
+        <li>
+          <a href="https://picostitch.com/about/#impressum-germany"> <i class="fa fa-paragraph"></i>imprint </a>
         </li>
       </ul>
 
