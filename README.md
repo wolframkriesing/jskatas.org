@@ -34,8 +34,8 @@ of the page that loads in an instant and the client-side waiting times are minim
 Since nobody has nodejs installed globally anymore, this project doesn't either.
 Node is installed via docker and in order to start the project for development
 run the following command
-- `./run.sh "npm start"` to start the server at port http://localhost:9779
-- to run the tests do `./run.sh "npm test"`
+- `./run.sh npm start` to start the server at port http://localhost:9779
+- to run the tests do `./run.sh npm test`
 
 [1]: https://twitter.com/tddbin/status/576305472128446466
 [2]: https://github.com/tddbin/katas
