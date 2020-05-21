@@ -3,6 +3,7 @@
 ## From real people
 - [ ] provide instructions how to run the katas locally - idea from https://twitter.com/FQ400/status/1263424581655760897
 - [ ] pair up with a designer - idea from https://twitter.com/FQ400/status/1263425789703397378
+- [ ] Provide insights on how to run jskatas.org locally and modify the design? https://twitter.com/FQ400/status/1263433600130842626
 
 ## Just mine
 - [ ] separate server- and client-side rendering better, improve code
