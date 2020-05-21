@@ -20,6 +20,9 @@
       do also show the ADRs from the katas repo    
 
 # version 3
+- [x] "fixed width rather than having text span the whole width of the browser" - by 
+      https://twitter.com/d_ir/status/1263428553506525184
+      and https://twitter.com/kit_son/status/1263434064377393162
 - [x] add ADRs for more transparency
 - [x] switch to lit-html (or alike) to not need to "embed" the state handling into the view lib (as (p)react requires it)
   - [x] make it render client-side

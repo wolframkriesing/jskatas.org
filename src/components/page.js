@@ -5,8 +5,8 @@ import {FooterComponent} from './footer.js';
 
 const Page = ({kataBundles}) =>
   html`
-    <div>
-      ${HeaderComponent()}
+    ${HeaderComponent()}
+    <main>
       <p style="padding: 1rem">
         I learned ES6 by writing it and failing. Out of this the es6katas
         evolved. And since, this allowed me to always again go back and
@@ -22,7 +22,7 @@ const Page = ({kataBundles}) =>
       </p>
       ${kataBundles.map(kataBundle => KataBundle({bundle: kataBundle}))}
       ${FooterComponent({katasCount: 95})}
-    </div>
+    </main>
   `;
 const KataBundle = ({bundle}) => {
   const anchorName = `bundle-${bundle.nameSlug}`;
