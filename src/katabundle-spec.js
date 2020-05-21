@@ -1,15 +1,18 @@
 import {describe, it} from 'kavun';
 import assert from 'assert';
-import KataBundle from '../katabundle.js';
-import KataGroup from '../katagroup';
+import KataBundle from './katabundle.js';
+import KataGroup from './katagroup';
+import {default as _Kata} from './kata.js';
 
 class Kata {
   static withId(id) {
-    return {id, publishDateUTC: new Date()};
+    return _Kata.fromRawItem({id, publishDateUTC: new Date()});
   }
+
   static withPublishDate(publishDateUTC) {
-    return {id: 42, publishDateUTC};
+    return _Kata.fromRawItem({id: 42, publishDateUTC});
   }
+
   static withoutPublishDate() {
     return Kata.withId(42);
   }

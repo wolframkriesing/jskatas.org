@@ -1,5 +1,6 @@
 import KataGroup from './katagroup.js';
 import KataBundle from './katabundle.js';
+import Kata from './kata.js';
 
 const fromMetadataToKataGroups = (groupedMetadataJson, url) => {
   const groups = groupedMetadataJson.groups;
@@ -7,7 +8,8 @@ const fromMetadataToKataGroups = (groupedMetadataJson, url) => {
   return groupNames.map(groupName => {
     const rawKataItems = groups[groupName].items;
     rawKataItems.forEach(item => (item.url = url + item.path));
-    return KataGroup.fromRawKataItems(groupName, rawKataItems);
+    const katas = rawKataItems.map(item => Kata.fromRawItem(item));
+    return KataGroup.fromRawKataItems(groupName, katas);
   });
 };
 

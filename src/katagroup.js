@@ -1,16 +1,10 @@
-import Kata from './kata.js';
-
 export default class KataGroup {
-  static fromRawKataItems(groupName, rawKataItems) {
+  static fromRawKataItems(groupName, katas) {
     const group = new KataGroup();
     group.name = groupName;
-    group.createKatas(rawKataItems);
+    group.katas = katas;
     group.sortByName();
     return group;
-  }
-
-  createKatas(rawKataItems) {
-    this.katas = rawKataItems.map(Kata.fromRawItem);
   }
 
   sortByName() {
