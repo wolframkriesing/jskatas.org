@@ -21,8 +21,8 @@ const Page = ({kataBundles}) =>
         Wolfram Kriesing
       </p>
       ${kataBundles.map(kataBundle => KataBundle({bundle: kataBundle}))}
-      ${FooterComponent({katasCount: 95})}
     </main>
+    ${FooterComponent({katasCount: 97})}
   `;
 const KataBundle = ({bundle}) => {
   const anchorName = `bundle-${bundle.nameSlug}`;

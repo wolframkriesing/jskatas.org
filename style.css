@@ -8,6 +8,12 @@ main {
   width: 75vw;
   margin: auto;
 }
+@media screen and (max-width: 600px) {
+  main {
+    width: 90vw;
+  }
+}
+
 
 a h1,
 a h2 {
@@ -32,6 +38,11 @@ h2 {
   background: #363738;
   padding: 0.5rem;
 }
+@media screen and (max-width: 600px) {
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
+}
 
 .group {
   display: inline-block;
@@ -43,6 +54,12 @@ h2 {
   .group h3 {
     margin: 0.2em 0;
     font-size: 1.1em;
+  }
+  @media screen and (max-width: 600px) {
+    .group {
+      display: block;
+      margin-left: 0;
+    }
   }
 
 header,
@@ -67,7 +84,13 @@ header {
     color: #D2D5D3;
     margin-left: 2em;
   }
-
+  @media screen and (max-width: 600px) {
+    header h1, header p {
+      display: block;
+      text-align: center;
+      margin: 1rem;
+    }
+  }
 
 /* 
   footer
@@ -99,7 +122,16 @@ footer {
   footer .disabled {
     text-decoration: line-through;
   }
-  
+  @media screen and (max-width: 600px) {
+    footer {
+      flex-direction: column;
+    }
+    footer ul {
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
   
   
   
