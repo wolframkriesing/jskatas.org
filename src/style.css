@@ -38,6 +38,11 @@ h2 {
   background: #363738;
   padding: 0.5rem;
 }
+@media screen and (max-width: 600px) {
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
+}
 
 .group {
   display: inline-block;
@@ -73,7 +78,13 @@ header {
     color: #D2D5D3;
     margin-left: 2em;
   }
-
+  @media screen and (max-width: 600px) {
+    header h1, header p {
+      display: block;
+      text-align: center;
+      margin: 1rem;
+    }
+  }
 
 /* 
   footer
