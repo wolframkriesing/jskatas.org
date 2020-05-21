@@ -4,6 +4,11 @@ body {
   margin: 0;
 }
 
+main {
+  width: 75vw;
+  margin: auto;
+}
+
 a h1,
 a h2 {
   color: white;
