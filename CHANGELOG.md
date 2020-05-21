@@ -6,6 +6,8 @@
 - [ ] Provide insights on how to run jskatas.org locally and modify the design? https://twitter.com/FQ400/status/1263433600130842626
 
 ## Just mine
+- [ ] the mobile view is quite useless, since you cant do tddbin anyways, so maybe just show
+      the popup with the info and an optional link for tddbin, if ppl really want
 - [ ] separate server- and client-side rendering better, improve code
 - [ ] allow sorting by "latest", "group by category" (e.g. "object API" "array API", etc.)
 - [ ] allow searching, filter down e.g. when typed "arr" show all that contains the string, in real time
