@@ -1,5 +1,10 @@
 # Ideas
 
+## From real people
+- [ ] provide instructions how to run the katas locally - idea from https://twitter.com/FQ400/status/1263424581655760897
+- [ ] pair up with a designer - idea from https://twitter.com/FQ400/status/1263425789703397378
+
+## Just mine
 - [ ] separate server- and client-side rendering better, improve code
 - [ ] allow sorting by "latest", "group by category" (e.g. "object API" "array API", etc.)
 - [ ] allow searching, filter down e.g. when typed "arr" show all that contains the string, in real time
