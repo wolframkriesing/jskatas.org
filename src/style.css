@@ -105,7 +105,16 @@ footer {
   footer .disabled {
     text-decoration: line-through;
   }
-  
+  @media screen and (max-width: 600px) {
+    footer {
+      flex-direction: column;
+    }
+    footer ul {
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
   
   
   
