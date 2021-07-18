@@ -193,7 +193,7 @@ footer {
   font-family: sans-serif;
   font-weight: bold;
   background-color: var(--color-overlay);
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 3px 3px 3px lightgrey;
 }
   .notification-bubble.new {
     color: darkred;
