@@ -228,8 +228,13 @@ input.filter[type=checkbox] {
     text-decoration: underline;
   }
 
-  input.filter[type=checkbox]:checked ~ * .group.noPublishedKatas,
-  input.filter[type=checkbox]:checked ~ * .group .kata.unpublished
-   {
+  input.filter[type=checkbox] ~ * .group.noPublishedKatas,
+  input.filter[type=checkbox] ~ * .group .kata.unpublished {
     display: none;
+  }
+  input.filter[type=checkbox]:checked ~ * .group.noPublishedKatas {
+    display: inline-block;
+  }
+  input.filter[type=checkbox]:checked ~ * .group .kata.unpublished {
+    display: flex;
   }
