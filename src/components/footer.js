@@ -24,7 +24,7 @@ const FooterComponent = ({katasCount}) => {
           <br/><a href="http://twitter.com/wolframkriesing" style="text-decoration: underline">LET ME KNOW!!!</a></b>
         </li>
       </ul>
-
+      
       <ul>
         <li>
           <a href=${TDDBIN_URL}>uses TDDbin</a>

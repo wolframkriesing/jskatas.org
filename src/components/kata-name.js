@@ -4,8 +4,8 @@ template.innerHTML = `
       :host {
       }
       code {
-        color: black;
-        background: #EEEEEE;
+        color: inherit;
+        background: inherit;
       }
       slot {
         display: none;

@@ -2,6 +2,7 @@
   --distance-smaller: 0.1rem;
   --distance-small: 0.3rem;
   --distance-large: 1rem;
+  --distance-larger: 1.5rem;
 
   --border-radius-small: var(--distance-small); /* Does this kinda think work? */
 
@@ -18,6 +19,7 @@
   --color-highlight-lighter: rgba(var(--color-highlight-rgb), 0.1);
   --color-secondary: #666;
   --color-overlay: rgb(252, 232, 191);
+  --color-overlay-lighter: rgba(252, 232, 191, 0.3);
 
   --readable-max-width: 50rem;
 }
@@ -38,25 +40,17 @@ main {
   }
 }
 
-
 a {
   color: var(--color-highlight);
 }
 a .code {
   font-family: monospace;
 }
-.group {
-  border: 1px solid var(--color-secondary);
-}
-.group a {
-  display: block;
-}
 h2 {
-  background-color: var(--color-overlay);
-  padding: 0.5rem
+  padding: var(--distance-large);
 }
 h2 .stats {
-  margin-left: var(--distance-large);
+  display: block;
   color: var(--color-secondary);
   font-size: small;
   font-weight: normal;
@@ -71,9 +65,13 @@ h2 .stats {
 .group {
   display: inline-block;
   vertical-align: top;
-  margin: 0 0 1em 1em;
-  padding: 0 1em 1em 1em;
+  margin: 0 0 var(--distance-large) var(--distance-larger);
+  padding: 0 var(--distance-large) var(--distance-large) var(--distance-large);
+  background-color: var(--color-overlay-lighter)
 }
+  .group a {
+    display: block;
+  }
   .group h3 {
     margin: 0.2em 0;
     font-size: 1.1em;
@@ -87,7 +85,6 @@ h2 .stats {
 
 header,
 footer {
-  background: var(--color-overlay);
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
@@ -97,12 +94,14 @@ footer {
   header 
 */
 header {
+  text-align: center;
   margin-bottom: 1em;
 }
   header h1, header p {
     display: inline;
   }
   header p {
+    display: block;
     color: var(--color-secondary);
     margin-left: 2em;
   }
@@ -122,6 +121,7 @@ footer {
   padding: 2em;
   display: flex;
   font-size: small;
+  background-color: var(--color-overlay);
 }
   footer .highlight a {
     color: var(--color-highlight);
@@ -164,9 +164,10 @@ footer {
 }
 .group .kata {
   display: flex;
+  margin-top: var(--distance-small);
 }
   .kata:hover a {
-    background: #D2D5D3;
+    background: var(--color-overlay);
   }
   
   .group .kata:hover .details {
@@ -176,30 +177,32 @@ footer {
     margin-top: 1.2rem;
     margin-left: 2rem;
     z-index: 1;
-    background: #D2D5D3;
+    background: var(--color-overlay);
+    box-shadow: 5px 5px 5px var(--color-highlight-lighter);
   }
   .kata.unpublished a {
     opacity: 0.3;
   }
 
 .notification-bubble {
-  color: white;
   position: absolute;
-  margin-left: -2.6em;
-  padding: 0 0.3em;
-  font-size: 0.6em;
+  margin-left: -3em;
+  margin-top: -0.3rem;
+  padding: 0 0.3rem;
+  font-size: 0.8em;
   font-family: sans-serif;
+  font-weight: bold;
+  background-color: var(--color-overlay);
+  box-shadow: 3px 3px 3px grey;
 }
   .notification-bubble.new {
-    background-color: darkred;
+    color: darkred;
   }
   .notification-bubble.unpublished {
-    background-color: black;
+    color: black;
   }
   .notification-bubble.easy {
-    margin-left: -2.8em;
-    color:  white;
-    background-color: darkgreen;
+    color: darkgreen;
   }
 
 main .filter {
