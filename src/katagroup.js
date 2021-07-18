@@ -9,6 +9,14 @@ export default class KataGroup {
     return group;
   }
 
+  get count() {
+    return this.katas.length;
+  }
+
+  get publishedCount() {
+    return this.katas.filter(k => k.isPublished).length;
+  }
+
   createKatas(rawKataItems) {
     this.katas = rawKataItems.map(Kata.fromRawItem);
   }
