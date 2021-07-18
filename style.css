@@ -211,15 +211,15 @@ main .filter {
 label.filter {
   margin-left: var(--distance-small);
   cursor: pointer;
+  color: var(--color-highlight);
+  text-decoration: underline;
 }
 input.filter[type=checkbox] {
 }
   input.filter[type=checkbox]:checked {
-    background-color: var(--color-highlight);
   }
   input.filter[type=checkbox]:checked + label {
-    color: var(--color-highlight);
-    text-decoration: underline;
+    background-color: var(--color-overlay);
   }
 
   input.filter[type=checkbox] ~ * .group.noPublishedKatas,
