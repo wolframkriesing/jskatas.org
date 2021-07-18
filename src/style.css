@@ -1,3 +1,26 @@
+:root {
+  --distance-smaller: 0.1rem;
+  --distance-small: 0.3rem;
+
+  --border-radius-small: var(--distance-small); /* Does this kinda think work? */
+
+  --spacing-smaller: var(--distance-smaller);
+  --spacing-small: 0.3rem;
+  --spacing-medium: 0.5rem;
+  --spacing-large: 1rem;
+  --spacing-larger: 2rem;
+  --spacing-big: 1rem; /* DEPRECATED name, use --spacing-large instead */
+  --spacing-bigger: 2rem; /* DEPRECATED name, use --spacing-larger instead */
+
+  --color-highlight: #A4131D;
+  --color-highlight-rgb: 164, 19, 29;
+  --color-highlight-lighter: rgba(var(--color-highlight-rgb), 0.1);
+  --color-secondary: #666;
+  --color-overlay: rgb(252, 232, 191);
+
+  --readable-max-width: 50rem;
+}
+
 body {
   font-family: sans-serif;
   font-size: large;
@@ -188,3 +211,25 @@ footer {
     background-color: darkgreen;
   }
 
+main .filter {
+  margin-left: 1rem;
+}
+label.filter {
+  margin-left: var(--distance-small);
+  cursor: pointer;
+}
+input.filter[type=checkbox] {
+}
+  input.filter[type=checkbox]:checked {
+    background-color: var(--color-highlight);
+  }
+  input.filter[type=checkbox]:checked + label {
+    color: var(--color-highlight);
+    text-decoration: underline;
+  }
+
+  input.filter[type=checkbox]:checked ~ * .group.noPublishedKatas,
+  input.filter[type=checkbox]:checked ~ * .group .kata.unpublished
+   {
+    display: none;
+  }

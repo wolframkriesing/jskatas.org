@@ -20,10 +20,19 @@ const Page = ({kataBundles}) =>
         <br />
         Wolfram Kriesing
       </p>
+      ${Filters()}
       ${kataBundles.map(kataBundle => KataBundle({bundle: kataBundle}))}
     </main>
     ${FooterComponent({katasCount: 97})}
   `;
+
+const Filters = () => {
+  return html`
+    <input class='filter' id='showPlannedKatas' type='checkbox'>
+    <label class='filter' for='showPlannedKatas'>Show planned katas</label>
+  `;
+};
+
 const KataBundle = ({bundle}) => {
   const anchorName = `bundle-${bundle.nameSlug}`;
   return html`
@@ -46,7 +55,7 @@ const KataBundle = ({bundle}) => {
 };
 const KataGroup = ({group, isNewestKataCheck}) =>
   html`
-    <div class="group">
+    <div class="group ${group.publishedCount === 0 ? 'noPublishedKatas' : ''}">
       <h3>${group.name}</h3>
       ${group.katas.map(kata =>
     Kata({kata, isNewest: isNewestKataCheck(kata)}),
