@@ -1,6 +1,7 @@
 :root {
   --distance-smaller: 0.1rem;
   --distance-small: 0.3rem;
+  --distance-large: 1rem;
 
   --border-radius-small: var(--distance-small); /* Does this kinda think work? */
 
@@ -38,33 +39,28 @@ main {
 }
 
 
-a h1,
-a h2 {
-  color: white;
-}
 a {
-  text-decoration: none;
-  color: #30544E;
-}
-a:visited {
-  color: #9A9A9A;
+  color: var(--color-highlight);
 }
 a .code {
-  background: #EEE; /*little lighter than the normal bg color*/
   font-family: monospace;
+}
+.group {
+  border: 1px solid var(--color-secondary);
 }
 .group a {
   display: block;
 }
 h2 {
-  color: white;
-  background: #363738;
-  padding: 0.5rem;
+  background-color: var(--color-overlay);
+  padding: 0.5rem
 }
 h2 .stats {
-  color: #D2D5D3;
+  margin-left: var(--distance-large);
+  color: var(--color-secondary);
   font-size: small;
   font-weight: normal;
+  text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   h1, h2, h3, h4 {
@@ -76,7 +72,6 @@ h2 .stats {
   display: inline-block;
   vertical-align: top;
   margin: 0 0 1em 1em;
-  border: 1px solid grey;
   padding: 0 1em 1em 1em;
 }
   .group h3 {
@@ -92,8 +87,7 @@ h2 .stats {
 
 header,
 footer {
-  background: #363738;
-  color: white;
+  background: var(--color-overlay);
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
@@ -109,7 +103,7 @@ header {
     display: inline;
   }
   header p {
-    color: #D2D5D3;
+    color: var(--color-secondary);
     margin-left: 2em;
   }
   @media screen and (max-width: 600px) {
@@ -129,11 +123,8 @@ footer {
   display: flex;
   font-size: small;
 }
-  footer a {
-    color: white;
-  }
   footer .highlight a {
-    color: #EE7F00;
+    color: var(--color-highlight);
   }
 
   footer ul {

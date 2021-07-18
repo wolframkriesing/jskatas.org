@@ -37,11 +37,12 @@ const KataBundle = ({bundle}) => {
   const anchorName = `bundle-${bundle.nameSlug}`;
   return html`
     <div>
-      <a href="#${anchorName}" title="${bundle.name}" id="${anchorName}">
-        <h2>${bundle.name} 
-          <span class="stats">available katas: ${bundle.publishedKatasCount}, unfinished or planned: ${bundle.katasCount-bundle.publishedKatasCount}</span>
-        </h2>
-      </a>
+      <h2>
+        <a href="#${anchorName}" title="${bundle.name}" id="${anchorName}">
+          ${bundle.name} 
+        </a>
+        <span class="stats">available katas: ${bundle.publishedKatasCount}, unfinished or planned: ${bundle.katasCount-bundle.publishedKatasCount}</span>
+      </h2>
       ${bundle
     .allGroups()
     .map(group =>
