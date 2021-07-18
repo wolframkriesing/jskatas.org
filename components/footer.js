@@ -20,11 +20,11 @@ const FooterComponent = ({katasCount}) => {
           <a href="https://picostitch.com/about/#impressum-germany"> <i class="fa fa-paragraph"></i>imprint </a>
         </li>
         <li>
-          <b style="color: lightpink">You have a job where I can write katas all day?
-          <br/><a href="http://twitter.com/wolframkriesing" style="color: lightpink; text-decoration: underline">LET ME KNOW!!!</a></b>
+          <b>You have a job where I can write katas all day?
+          <br/><a href="http://twitter.com/wolframkriesing" style="text-decoration: underline">LET ME KNOW!!!</a></b>
         </li>
       </ul>
-
+      
       <ul>
         <li>
           <a href=${TDDBIN_URL}>uses TDDbin</a>

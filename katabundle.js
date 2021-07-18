@@ -8,8 +8,22 @@ export default class KataBundle {
     return this.groups;
   }
 
+  /**
+   * @deprecated use `count`
+   */
   get length() {
+    return this.count;
+  }
+  get count() {
     return this.allGroups().length;
+  }
+
+  get publishedKatasCount() {
+    return this.allGroups().reduce((sum, cur) => sum+cur.publishedCount, 0);
+  }
+
+  get katasCount() {
+    return this.allGroups().reduce((sum, cur) => sum+cur.count, 0);
   }
 
   static withGroups({name, nameSlug, groups}) {

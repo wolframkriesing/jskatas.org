@@ -1,3 +1,29 @@
+:root {
+  --distance-smaller: 0.1rem;
+  --distance-small: 0.3rem;
+  --distance-large: 1rem;
+  --distance-larger: 1.5rem;
+
+  --border-radius-small: var(--distance-small); /* Does this kinda think work? */
+
+  --spacing-smaller: var(--distance-smaller);
+  --spacing-small: 0.3rem;
+  --spacing-medium: 0.5rem;
+  --spacing-large: 1rem;
+  --spacing-larger: 2rem;
+  --spacing-big: 1rem; /* DEPRECATED name, use --spacing-large instead */
+  --spacing-bigger: 2rem; /* DEPRECATED name, use --spacing-larger instead */
+
+  --color-highlight: #A4131D;
+  --color-highlight-rgb: 164, 19, 29;
+  --color-highlight-lighter: rgba(var(--color-highlight-rgb), 0.1);
+  --color-secondary: #666;
+  --color-overlay: rgb(252, 232, 191);
+  --color-overlay-lighter: rgba(252, 232, 191, 0.3);
+
+  --readable-max-width: 50rem;
+}
+
 body {
   font-family: sans-serif;
   font-size: large;
@@ -14,29 +40,21 @@ main {
   }
 }
 
-
-a h1,
-a h2 {
-  color: white;
-}
 a {
-  text-decoration: none;
-  color: #30544E;
-}
-a:visited {
-  color: #9A9A9A;
+  color: var(--color-highlight);
 }
 a .code {
-  background: #EEE; /*little lighter than the normal bg color*/
   font-family: monospace;
 }
-.group a {
-  display: block;
-}
 h2 {
-  color: white;
-  background: #363738;
-  padding: 0.5rem;
+  padding: var(--distance-large);
+}
+h2 .stats {
+  display: block;
+  color: var(--color-secondary);
+  font-size: small;
+  font-weight: normal;
+  text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   h1, h2, h3, h4 {
@@ -47,10 +65,13 @@ h2 {
 .group {
   display: inline-block;
   vertical-align: top;
-  margin: 0 0 1em 1em;
-  border: 1px solid grey;
-  padding: 0 1em 1em 1em;
+  margin: 0 0 var(--distance-large) var(--distance-larger);
+  padding: 0 var(--distance-large) var(--distance-large) var(--distance-large);
+  background-color: var(--color-overlay-lighter)
 }
+  .group a {
+    display: block;
+  }
   .group h3 {
     margin: 0.2em 0;
     font-size: 1.1em;
@@ -64,8 +85,6 @@ h2 {
 
 header,
 footer {
-  background: #363738;
-  color: white;
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
@@ -75,13 +94,15 @@ footer {
   header 
 */
 header {
+  text-align: center;
   margin-bottom: 1em;
 }
   header h1, header p {
     display: inline;
   }
   header p {
-    color: #D2D5D3;
+    display: block;
+    color: var(--color-secondary);
     margin-left: 2em;
   }
   @media screen and (max-width: 600px) {
@@ -100,12 +121,10 @@ footer {
   padding: 2em;
   display: flex;
   font-size: small;
+  background-color: var(--color-overlay);
 }
-  footer a {
-    color: white;
-  }
   footer .highlight a {
-    color: #EE7F00;
+    color: var(--color-highlight);
   }
 
   footer ul {
@@ -145,9 +164,10 @@ footer {
 }
 .group .kata {
   display: flex;
+  margin-top: var(--distance-small);
 }
   .kata:hover a {
-    background: #D2D5D3;
+    background: var(--color-overlay);
   }
   
   .group .kata:hover .details {
@@ -157,29 +177,58 @@ footer {
     margin-top: 1.2rem;
     margin-left: 2rem;
     z-index: 1;
-    background: #D2D5D3;
+    background: var(--color-overlay);
+    box-shadow: 5px 5px 5px var(--color-highlight-lighter);
   }
   .kata.unpublished a {
     opacity: 0.3;
   }
 
 .notification-bubble {
-  color: white;
   position: absolute;
-  margin-left: -2.6em;
-  padding: 0 0.3em;
-  font-size: 0.6em;
+  margin-left: -3em;
+  margin-top: -0.3rem;
+  padding: 0 0.3rem;
+  font-size: 0.8em;
   font-family: sans-serif;
+  font-weight: bold;
+  background-color: var(--color-overlay);
+  box-shadow: 3px 3px 3px lightgrey;
 }
   .notification-bubble.new {
-    background-color: darkred;
+    color: darkred;
   }
   .notification-bubble.unpublished {
-    background-color: black;
+    color: black;
   }
   .notification-bubble.easy {
-    margin-left: -2.8em;
-    color:  white;
-    background-color: darkgreen;
+    color: darkgreen;
   }
 
+main .filter {
+  margin-left: 1rem;
+}
+label.filter {
+  margin-left: var(--distance-small);
+  cursor: pointer;
+}
+input.filter[type=checkbox] {
+}
+  input.filter[type=checkbox]:checked {
+    background-color: var(--color-highlight);
+  }
+  input.filter[type=checkbox]:checked + label {
+    color: var(--color-highlight);
+    text-decoration: underline;
+  }
+
+  input.filter[type=checkbox] ~ * .group.noPublishedKatas,
+  input.filter[type=checkbox] ~ * .group .kata.unpublished {
+    display: none;
+  }
+  input.filter[type=checkbox]:checked ~ * .group.noPublishedKatas {
+    display: inline-block;
+  }
+  input.filter[type=checkbox]:checked ~ * .group .kata.unpublished {
+    display: flex;
+  }

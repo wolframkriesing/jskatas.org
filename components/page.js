@@ -8,27 +8,32 @@ const Page = ({kataBundles}) =>
     ${HeaderComponent()}
     <main>
       <p style="padding: 1rem">
-        I learned ES6 by writing it and failing. Out of this the es6katas
-        evolved. And since, this allowed me to always again go back and
-        (re-)learn ES6 I wrote katas for ES8, later ES1 (I always got the
-        <code>sort()</code> function wrong). At some point I started to learn a
-        very expressive assertion library
-        <a href="https://github.com/rluba/hamjest" rel="noopener">hamjest</a> by writing katas
-        for it, and so this page came about.
-        <br />
-        Enjoy and I hope you have fun learning with it.
-        <br />
-        Wolfram Kriesing
+        Formerly <b>ES6 Katas</b> - Now <b>JS Katas</b>.
+        Learn JavaScript, the disciplined way. Learn all the details.
       </p>
+      ${Filters()}
       ${kataBundles.map(kataBundle => KataBundle({bundle: kataBundle}))}
     </main>
     ${FooterComponent({katasCount: 97})}
   `;
+
+const Filters = () => {
+  return html`
+    <input class='filter' id='showPlannedKatas' type='checkbox'>
+    <label class='filter' for='showPlannedKatas'>Show planned katas</label>
+  `;
+};
+
 const KataBundle = ({bundle}) => {
   const anchorName = `bundle-${bundle.nameSlug}`;
   return html`
     <div>
-      <a href="#${anchorName}" title="${bundle.name}" id="${anchorName}"><h2>${bundle.name}</h2></a>
+      <h2>
+        <a href="#${anchorName}" title="${bundle.name}" id="${anchorName}">
+          ${bundle.name} 
+        </a>
+        <span class="stats">available katas: ${bundle.publishedKatasCount}, unfinished or planned: ${bundle.katasCount-bundle.publishedKatasCount}</span>
+      </h2>
       ${bundle
     .allGroups()
     .map(group =>
@@ -42,7 +47,7 @@ const KataBundle = ({bundle}) => {
 };
 const KataGroup = ({group, isNewestKataCheck}) =>
   html`
-    <div class="group">
+    <div class="group ${group.publishedCount === 0 ? 'noPublishedKatas' : ''}">
       <h3>${group.name}</h3>
       ${group.katas.map(kata =>
     Kata({kata, isNewest: isNewestKataCheck(kata)}),
