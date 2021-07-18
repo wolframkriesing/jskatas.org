@@ -3,3 +3,4 @@ src/npm-debug.log
 tmp
 node_modules
 transpiled
+.idea

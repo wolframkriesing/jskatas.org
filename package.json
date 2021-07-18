@@ -39,9 +39,9 @@
   "author": "Wolfram Kriesing",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tddbin/es6katas.org/issues"
+    "url": "https://github.com/wolframkriesing/jskatas.org/issues"
   },
-  "homepage": "https://github.com/tddbin/es6katas.org",
+  "homepage": "https://github.com/wolframkriesing/jskatas.org",
   "devDependencies": {
     "dotenv": "^8.0.0",
     "esm": "^3.2.25",
