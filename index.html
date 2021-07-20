@@ -315,8 +315,8 @@
   
     <div>
       <h2>
-        <a href="#bundle-es6-katas" title="ECMAScript 6 (ES2015) Katas " id="bundle-es6-katas">
-          ECMAScript 6 (ES2015) Katas  
+        <a href="#bundle-es6-katas" title="ES2015 (ECMAScript 6) Katas " id="bundle-es6-katas">
+          ES2015 (ECMAScript 6) Katas  
         </a>
         <span class="stats">available katas: 81, unfinished or planned: 0</span>
       </h2>
@@ -2390,8 +2390,8 @@
   
     <div>
       <h2>
-        <a href="#bundle-es7-katas" title="ECMAScript 7 (ES2016) Katas " id="bundle-es7-katas">
-          ECMAScript 7 (ES2016) Katas  
+        <a href="#bundle-es7-katas" title="ES2016 (ECMAScript 7) Katas " id="bundle-es7-katas">
+          ES2016 (ECMAScript 7) Katas  
         </a>
         <span class="stats">available katas: 1, unfinished or planned: 0</span>
       </h2>
@@ -2455,8 +2455,8 @@
   
     <div>
       <h2>
-        <a href="#bundle-es8-katas" title="ECMAScript 8 (ES2017) Katas " id="bundle-es8-katas">
-          ECMAScript 8 (ES2017) Katas  
+        <a href="#bundle-es8-katas" title="ES2017 (ECMAScript 8) Katas " id="bundle-es8-katas">
+          ES2017 (ECMAScript 8) Katas  
         </a>
         <span class="stats">available katas: 1, unfinished or planned: 2</span>
       </h2>
@@ -2545,27 +2545,27 @@
   
     <div>
       <h2>
-        <a href="#bundle-es10-katas" title="ECMAScript 10 (ES2019) Katas " id="bundle-es10-katas">
-          ECMAScript 10 (ES2019) Katas  
+        <a href="#bundle-es2019-katas" title="ES2019 (ECMAScript 10) Katas " id="bundle-es2019-katas">
+          ES2019 (ECMAScript 10) Katas  
         </a>
-        <span class="stats">available katas: 3, unfinished or planned: 0</span>
+        <span class="stats">available katas: 3, unfinished or planned: 9</span>
       </h2>
       
-    <div class="group ">
-      <h3>String API</h3>
+    <div class="group noPublishedKatas">
+      <h3>try-catch</h3>
       
-    <div class=kata>
-      <a href=https://tddbin.com#?kata=es10/language/string-api/trimStart target="_blank" rel="noopener">
-        <kata-name>`string.trimStart()`</kata-name>
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/try-catch/catch target="_blank" rel="noopener">
+        <kata-name>unbinded `catch`</kata-name>
       </a>
       
-        <span class="notification-bubble new">new</span>
+        <span class="notification-bubble unpublished">planned</span>
        
     <span class="details">
       <h3>
-        `string.trimStart()` (#3)
+        unbinded `catch` (#12)
       </h3>
-      <p>`string.trimStart()` - removes whitespace from the beginning of a string</p>
+      <p>`catch` can now be used without a binding</p>
       Difficulty: beginner
       <br />
       
@@ -2574,15 +2574,134 @@
       <ul>
         
             <li>
-              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart rel="noopener">Description of Object.fromEntries() on MDN.</a>
+              <a href=https://tc39.es/proposal-optional-catch-binding/ rel="noopener">The proposal, that went into the specification.</a>
             </li>
           
             <li>
-              <a href=https://www.ecma-international.org/ecma-262/10.0/#sec-string.prototype.trimstart rel="noopener">The specification describing `String.prototype.trimStart()`.</a>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch#the_exception_identifier rel="noopener">Description of "The exception identifier" on MDN.</a>
             </li>
           
             <li>
-              <a href=https://github.com/tc39/test262/tree/main/test/built-ins/String/prototype/trimStart rel="noopener">The oficial tests for JavaScript (engines) for `trimStart`.</a>
+              <a href=https://v8.dev/features/optional-catch-binding rel="noopener">Blog post on the the optional catch binding, on the v8 blog.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    <div class="group noPublishedKatas">
+      <h3>Array API</h3>
+      
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/array-api/flat target="_blank" rel="noopener">
+        <kata-name>`array.flat()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        `array.flat()` (#5)
+      </h3>
+      <p>`array.flat()` creates an array with all sub-array elements concatenated recursively</p>
+      Difficulty: intermediate
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat rel="noopener">Description of array.flat() on MDN.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/array-flat-flatmap rel="noopener">Blog post on flat and flatMap, on the v8 blog.</a>
+            </li>
+          
+            <li>
+              <a href=https://developers.google.com/web/updates/2018/03/smooshgate rel="noopener">"#SmooshGate FAQ"</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/array-api/flatMap target="_blank" rel="noopener">
+        <kata-name>`array.flatMap()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        `array.flatMap()` (#6)
+      </h3>
+      <p>`array.flatMap()` maps over each element and flattens it afterwards</p>
+      Difficulty: intermediate
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap rel="noopener">Description of array.flatMap() on MDN.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/array-flat-flatmap rel="noopener">Blog post on flat and flatMap, on the v8 blog.</a>
+            </li>
+          
+            <li>
+              <a href=https://developers.google.com/web/updates/2018/03/smooshgate rel="noopener">"#SmooshGate FAQ"</a>
+            </li>
+          
+            <li>
+              <a href=https://exploringjs.com/impatient-js/ch_arrays.html#flatmap-mapping-to-zero-or-more-values rel="noopener">".flatMap(): mapping to zero or more values " by Axel Rauschmayer</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/array-api/sort target="_blank" rel="noopener">
+        <kata-name>stable `array.sort()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        stable `array.sort()` (#7)
+      </h3>
+      <p>`array.sort()` - is now a stable sort</p>
+      Difficulty: intermediate
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#sort_stability rel="noopener">MDN chapter on "Sort stability".</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/stable-sort rel="noopener">Blog post the stable sort, on the v8 blog.</a>
             </li>
           
       </ul>
@@ -2598,7 +2717,7 @@
       <h3>Object API</h3>
       
     <div class=kata>
-      <a href=https://tddbin.com#?kata=es10/language/object-api/fromEntries target="_blank" rel="noopener">
+      <a href=https://tddbin.com#?kata=es2019/language/object-api/fromEntries target="_blank" rel="noopener">
         <kata-name>`Object.fromEntries()`</kata-name>
       </a>
        
@@ -2626,7 +2745,7 @@
     </div>
   
     <div class=kata>
-      <a href=https://tddbin.com#?kata=es10/language/object-api/fromEntries-in-depth target="_blank" rel="noopener">
+      <a href=https://tddbin.com#?kata=es2019/language/object-api/fromEntries-in-depth target="_blank" rel="noopener">
         <kata-name>`Object.fromEntries()` in depth</kata-name>
       </a>
        
@@ -2656,6 +2775,312 @@
           
             <li>
               <a href=https://github.com/tc39/proposal-object-from-entries/blob/master/DETAILS.md rel="noopener">Very interesting details about some decisions on this method.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    <div class="group ">
+      <h3>String API</h3>
+      
+    <div class=kata>
+      <a href=https://tddbin.com#?kata=es2019/language/string-api/trimStart target="_blank" rel="noopener">
+        <kata-name>`string.trimStart()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble easy">easy</span>
+       
+    <span class="details">
+      <h3>
+        `string.trimStart()` (#3)
+      </h3>
+      <p>`string.trimStart()` - removes whitespace from the beginning of a string</p>
+      Difficulty: beginner
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart rel="noopener">Description of `String.prototype.trimStart()` on MDN.</a>
+            </li>
+          
+            <li>
+              <a href=https://www.ecma-international.org/ecma-262/10.0/#sec-string.prototype.trimstart rel="noopener">The specification describing `String.prototype.trimStart()`.</a>
+            </li>
+          
+            <li>
+              <a href=https://github.com/tc39/test262/tree/main/test/built-ins/String/prototype/trimStart rel="noopener">The official tests for JavaScript (engines) for `trimStart`.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/string-api/trimEnd target="_blank" rel="noopener">
+        <kata-name>`string.trimEnd()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        `string.trimEnd()` (#4)
+      </h3>
+      <p>`string.trimEnd()` - removes whitespace from the end of a string</p>
+      Difficulty: beginner
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd rel="noopener">Description of String.prototype.trimEnd() on MDN.</a>
+            </li>
+          
+            <li>
+              <a href=https://262.ecma-international.org/10.0/#sec-string.prototype.trimend rel="noopener">The specification describing `String.prototype.trimEnd()`.</a>
+            </li>
+          
+            <li>
+              <a href=https://github.com/tc39/test262/tree/main/test/built-ins/String/prototype/trimEnd rel="noopener">The official tests for JavaScript (engines) for `trimStart`.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/string-trimming rel="noopener">Blog post on the v8 blog.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    <div class="group noPublishedKatas">
+      <h3>Function API</h3>
+      
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/function-api/toString target="_blank" rel="noopener">
+        <kata-name>`function.toString()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        `function.toString()` (#8)
+      </h3>
+      <p>`function.toString()` - now returns the complete source code of the function</p>
+      Difficulty: beginner
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://tc39.es/Function-prototype-toString-revision/#proposal-sec-function.prototype.tostring rel="noopener">The proposal, that went into the specification.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/function-tostring rel="noopener">Blog post on the new `function.toString()`, on the v8 blog.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    <div class="group noPublishedKatas">
+      <h3>JSON API</h3>
+      
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/json-api/stringify target="_blank" rel="noopener">
+        <kata-name>well-formed `JSON.stringify()`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        well-formed `JSON.stringify()` (#9)
+      </h3>
+      <p>`JSON.stringify()` - now returns well-formed output</p>
+      Difficulty: beginner
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://github.com/tc39/proposal-well-formed-stringify rel="noopener">The proposal, that went into the specification.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/well-formed-json-stringify rel="noopener">Blog post on the well-formed `JSON.stringify()`, on the v8 blog.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    <div class="group noPublishedKatas">
+      <h3>JSON superset</h3>
+      
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/json-superset/basics target="_blank" rel="noopener">
+        <kata-name>JSON superset basics</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        JSON superset basics (#10)
+      </h3>
+      <p>JSON is now a syntactic subset of ECMAScript</p>
+      Difficulty: advanced
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://github.com/tc39/proposal-json-superset rel="noopener">The proposal, that went into the specification.</a>
+            </li>
+          
+            <li>
+              <a href=https://github.com/tc39/test262/pull/1544/files rel="noopener">The merge request with the official tests for JavaScript (engines) for JSON superset.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/subsume-json rel="noopener">Blog post on the the JSON superset, on the v8 blog.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    <div class="group noPublishedKatas">
+      <h3>Symbol API</h3>
+      
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2019/language/symbol-api/description target="_blank" rel="noopener">
+        <kata-name>`symbol.description`</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        `symbol.description` (#11)
+      </h3>
+      <p>A read-only description of a Symbol object.</p>
+      Difficulty: intermediate
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description rel="noopener">Description of `symbol.description` on MDN.</a>
+            </li>
+          
+            <li>
+              <a href=https://v8.dev/features/symbol-description rel="noopener">Blog post on the the `symbol.description`, on the v8 blog.</a>
+            </li>
+          
+            <li>
+              <a href=https://tc39.es/ecma262/#sec-symbol.prototype.description rel="noopener">The proposal, that went into the specification.</a>
+            </li>
+          
+      </ul>
+    </section>
+  
+    </span>
+  
+    </div>
+  
+    </div>
+  
+    </div>
+  
+    <div>
+      <h2>
+        <a href="#bundle-es2020-katas" title="ES2020 (ECMAScript 11) Katas " id="bundle-es2020-katas">
+          ES2020 (ECMAScript 11) Katas  
+        </a>
+        <span class="stats">available katas: 0, unfinished or planned: 1</span>
+      </h2>
+      
+    <div class="group noPublishedKatas">
+      <h3>String API</h3>
+      
+    <div class=kata unpublished>
+      <a href=https://tddbin.com#?kata=es2020/language/string-api/matchAll target="_blank" rel="noopener">
+        <kata-name>string.matchAll()</kata-name>
+      </a>
+      
+        <span class="notification-bubble unpublished">planned</span>
+       
+    <span class="details">
+      <h3>
+        string.matchAll() (#1)
+      </h3>
+      <p>Returns all results matching a regular expression.</p>
+      Difficulty: beginner
+      <br />
+      
+    <section>
+      <h3>Links for futher reading</h3>
+      <ul>
+        
+            <li>
+              <a href=https://github.com/tc39/proposal-string-matchall rel="noopener">The proposal repo.</a>
+            </li>
+          
+            <li>
+              <a href=https://tc39.es/proposal-string-matchall/ rel="noopener">The rendered and readable proposal.</a>
+            </li>
+          
+            <li>
+              <a href=https://tc39.es/ecma262/#sec-string.prototype.matchall rel="noopener">The spec text.</a>
+            </li>
+          
+            <li>
+              <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll rel="noopener">The Mozilla Developer Network docs, contains good examples.</a>
             </li>
           
       </ul>

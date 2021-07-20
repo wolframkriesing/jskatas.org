@@ -9,7 +9,8 @@ export const loadKataBundles = async ({fetch}) => {
     fetch(metadataUrls.es6),
     fetch(metadataUrls.es7),
     fetch(metadataUrls.es8),
-    fetch(metadataUrls.es10),
+    fetch(metadataUrls.es2019),
+    fetch(metadataUrls.es2020),
     fetch(metadataUrls.hamjest),
   ]);
 
@@ -41,12 +42,18 @@ export const loadKataBundles = async ({fetch}) => {
   kataBundles.push(
     RawMetadata.toKataBundle({
       metadata: bundlesMetadata[5],
-      url: TDDBIN_URL + '#?kata=es10/language/',
+      url: TDDBIN_URL + '#?kata=es2019/language/',
     }),
   );
   kataBundles.push(
     RawMetadata.toKataBundle({
       metadata: bundlesMetadata[6],
+      url: TDDBIN_URL + '#?kata=es2020/language/',
+    }),
+  );
+  kataBundles.push(
+    RawMetadata.toKataBundle({
+      metadata: bundlesMetadata[7],
       url: TDDBIN_URL + '#?kata=libraries/hamjest/',
     }),
   );
