@@ -9,7 +9,8 @@ export const metadataUrls = {
   es6: `${katasUrl}/es6/language/__grouped__.json`,
   es7: `${katasUrl}/es7/language/__grouped__.json`,
   es8: `${katasUrl}/es8/language/__grouped__.json`,
-  es10: `${katasUrl}/es10/language/__grouped__.json`,
+  es2019: `${katasUrl}/es2019/language/__grouped__.json`,
+  es2020: `${katasUrl}/es2020/language/__grouped__.json`,
   hamjest: `${katasUrl}/libraries/hamjest/__grouped__.json`,
 };
 
@@ -19,7 +20,8 @@ const bundles = [
   'es6/language',
   'es7/language',
   'es8/language',
-  'es10/language',
+  'es2019/language',
+  'es2020/language',
   'libraries/hamjest',
 ];
 class BundleConfig {
